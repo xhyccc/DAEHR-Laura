@@ -1,0 +1,43 @@
+
+
+\documentclass{article}
+\usepackage{algorithm}  
+\usepackage{algorithmic} 
+
+\begin{document}
+% algorithm 2.1.1
+% APM: Alternating Projection Method
+\begin{algorithm}
+\caption{APM algorithm}
+\label{alg_APM}
+\begin{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\REQUIRE ~~\\ %Input 
+
+Symmetric $A$ in $S^n$; \\
+\ENSURE ~~\\ %Output
+
+The nearest correlation matrix, $X$; \\
+
+
+\renewcommand{\algorithmicrequire}{\textbf{Begin}}
+\renewcommand{\algorithmicensure}{\textbf{End}}
+\REQUIRE ~~\\ %Input 
+
+
+
+
+\STATE Initialization: $X_0$ = $A$, $k = 1$, $I_{mod_0} = 0$, $\Delta = 1$;
+\WHILE {$\Delta \geq tol, or  k \leq maxit$}  
+\STATE $R_k = X_{k-1} - I_{mod_{k-1}}$, \% $I_{mod_{k-1}}$ is Dykstra's correction;
+\STATE $X_{k}^{*} = P_S(R_k)$;
+\STATE $I_{mod_k} = X_{k}^{*} - R_k$;
+\STATE $X_k = P_U(X_{k}^{*})$;
+\ENDWHILE \\
+\ENSURE ~~\\ %Output
+
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}

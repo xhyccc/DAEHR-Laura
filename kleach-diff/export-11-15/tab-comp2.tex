@@ -1,0 +1,80 @@
+\begin{table}
+{
+\begin{center}
+\caption{Performance Comparison between \TheName\ and other Predictive Models, where ``ACC.'' refers to accuracy and ``F1.'' refers to F1-Score.}
+		\label{tab:table13_compressed}
+\begin{tabular}{*{5}{c}}
+\toprule
+    &  \multicolumn{4}{c}{Training Set $ \times 2$}\\
+    \cmidrule(lr){2-5}
+    &  
+    \multicolumn{2}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    %\multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{2}{c}{250} \\
+  % \multicolumn{3}{c}{300} &
+    %\multicolumn{3}{c}{350} \\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+Algorithm & \texttt{ACC.} & \texttt{F1.}&
+						%\texttt{ACC.} & \texttt{SEN0.} & \texttt{SPE0.} &
+                          % \texttt{ACC.} & \texttt{SEN0.} & \texttt{SPE0.} &
+                           \texttt{ACC.} & \texttt{F1.} \\
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LDA &   0.551 & 0.549  &     0.639 & 0.641  \\
+ 
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    Logit. Reg. &   0.614 & 0.521  &     0.615 & 0.501 \\
+    
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    SVM  &   0.614 & 0.608 &     0.660 & 0.669  \\
+   % \midrule
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+
+   AdaBoost-10 &   0.643 & 0.599 &     0.629 & 0.538   \\   
+   \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+			
+    AdaBoost-50 &    0.633 & 0.568 &     0.633 & 0.550       \\
+
+    % \midrule
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    % \multirow{5}{*}{DAEHR($\lambda$)} 
+     \TheName\ &  \textbf{0.658} & \textbf{ 0.695}  &     \textbf{0.684} & \textbf{ 0.719}      \\
+       
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table}
+
+
+

@@ -1,0 +1,82 @@
+\begin{table}
+{
+\begin{center}
+\caption{Performance Comparison between \TheName\ and other Predictive Models, where ``ACC.'' refers to accuracy and ``F1.'' refers to F1-Score.}
+		\label{tab:table13_compressed}
+
+\begin{tabular}{*{5}{c}}
+\toprule
+    &  \multicolumn{4}{c}{Training Set $ \times 2$}\\
+    \cmidrule(lr){2-5}
+    &  
+    \multicolumn{2}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    %\multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{2}{c}{250} \\
+  % \multicolumn{3}{c}{300} &
+    %\multicolumn{3}{c}{350} \\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+Algorithm & \texttt{ACC.} & \texttt{F1.}&
+						%\texttt{ACC.} & \texttt{SEN0.} & \texttt{SPE0.} &
+                          % \texttt{ACC.} & \texttt{SEN0.} & \texttt{SPE0.} &
+                           \texttt{ACC.} & \texttt{F1.} \\
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+LDA&0.551$\pm$0.001&0.547$\pm$0.001&0.639$\pm$0.001&0.640$\pm$0.001\\
+ 
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    Logit. Reg. &0.614$\pm$0.004&0.471$\pm$0.056&0.615$\pm$0.003&0.468$\pm$0.035\\
+
+    
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+SVM&0.614$\pm$0.001&0.607$\pm$0.001&0.660$\pm$0.001&0.669$\pm$0.001\\
+   % \midrule
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+
+   AdaBoost-10 	&0.643$\pm$0.001&0.589$\pm$0.007&0.629$\pm$0.001&0.523$\pm$0.011\\
+   \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+			
+    AdaBoost-50 	&0.633$\pm$0.002&0.548$\pm$0.019&0.633$\pm$0.001&0.538$\pm$0.008\\
+
+    % \midrule
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    % \multirow{5}{*}{DAEHR($\lambda$)} 
+     \TheName\ 	&0.653$\pm$0.036&0.711$\pm$0.013&0.666$\pm$0.022&0.720$\pm$0.013\\
+       
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table}
+
+
+

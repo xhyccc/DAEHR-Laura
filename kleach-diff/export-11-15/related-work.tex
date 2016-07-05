@@ -1,0 +1,56 @@
+\section{Related Work}\label{sec:2}
+
+% machine learning in medical area
+In this section, we summarize previous studies related to this paper from two aspects: \emph{data mining approaches to early detection of diseases} and \emph{extensions to LDA learning}.
+
+\subsection{Big Data Approaches to Disease Early Detection}
+
+Various analytical methods have been used to study the causes, prevention, progression, and interventions of diseases.
+Among these methods, machine learning emerged as a promising technique in the prediction of diseases ~\cite{maroco_data_2011,huang_toward_2014}.
+In this section, we will discuss previous work in two areas: \emph{predictive modeling} and \emph{data representation} approaches.
+
+
+\subsubsection{Predictive Models for Early Detection of Disease} 
+
+Predictive models have become popular in the early detection of diseases, such as breast cancer, type II diabetes and cardiovascular disease~\cite{Lindstrom01032003,riskprediction,zheng_predictive_2015,yoo_data_2011}.
+The outcomes of the predictive models are beneficial to both care providers and patients.
+Accurate prediction of diseases can assist clinicians in identifying high-risk patients in an early stage, ultimately leading to more timely diagnoses and more focused delivery of effective treatments to those patients.
+In essence, the early detection of diseases can be viewed as a classification problem so that well-established classifiers can be used to perform the task.
+Among the studies on the early detection of mental disorders, a LASSO logistic regression model has been applied to predict the depression severity to help personalize treatment for high-risk patients~\cite{huang_toward_2014}.
+%In this work, the feature vector used for prediction includes gender, ICD-9 codes, disease and drug ingredient terms, and average number of visits. 
+%However, the predictive model is more accurate in recognizing low risk-patients and achieves a 90\% specificity, while the sensitivity are 25\% using the information 12 months before the diagnosis and 50\% at the time of diagnosis, respectively~\cite{huang_toward_2014}.
+  
+\subsubsection{EHR Data Representation for Predictive Models. } 
+
+%Electronic health data is highly accessible in health care institutions and has become a promising data source for public health research.
+%However, EHR data is heterogeneous and cannot be readily expressed in a unified vector space.
+%Thus, an appropriate representation of those data is critical for further advancements in analytics and modeling.
+ 
+Many data representation approaches have been developed to preserve useful information from the raw EHR data.
+Diagnosis-frequency vectors have been proposed~\cite{ng_personalized_2015,huang_toward_2014} to convert sequences of diagnoses with different lengths into fixed-length data vectors.
+This approach associates each patient with an intuitive notion of an ``intensity'' of each disease with which a patient has been diagnosed.
+Because such vectors can be easily handled by common predictive models without further data representation.
+Some novel representation methods have been proposed to characterize the temporal order information in patients' diagnosis sequences using the frequencies of transitions between diagnoses~\cite{zhang_mseq_2015,wang_towards_2012,liu_temporal_2015,gotz_methodology_2014,perer_frequence:_2014,perer_mining_2015}.
+Specifically,~\cite{zhang_mseq_2015} intends to project the frequency of transition between each two diagnoses onto a fully-connected graph, while~\cite{liu_temporal_2015} preserves the frequencies of important transitions using sparse graph representation and penalty.
+While previous work usually considers the frequency of pairwise transitions between each two diagnoses,~\cite{gotz_methodology_2014,perer_frequence:_2014,perer_mining_2015} consider the frequencies of transitions crossing multiple diagnoses using a hyper-graph.
+
+%In~\cite{wang_framework_2012}, Wang et al. use a spatial-temporal matrix to represent the a sequence of events in which the two dimensions represents the event type and time information, respectively. In~\cite{liu_temporal_2015}, Liu et al. considers events in a patient's EHR is represented by a temporal graph and basis graphs are learned as the features to represent patients. Furthermore, frequent sequence mining has been utilized to uncover the most important event sequences~\cite{}. In~\cite{gotz_methodology_2014}, Gotz combine the episode definition and temporal pattern mining techniques to support the visual exploration of the clinical event patterns with most impact. 
+
+% move to discussion
+%To address high dimensional data, FeaFiner~\cite{zhou_feafiner:_2013} uses simultaneous feature grouping and selection. It extracts relevant and non-overlapping feature concepts in a low dimensional space, where the prediction accuracy is improved when applied to predicting Alzheimer’s Disease-related scores~\cite{zhou_feafiner:_2013}. 
+
+\subsection{Extensions to LDA Model}
+
+Regarding the application of LDA to EHR-based early detection of diseases, here we mainly introduce several LDA extensions in High Dimension Low Sample Size (HDLSS) settings.
+As discussed above, when LDA works in HDLSS, there might exist two major technical issues: 1) LDA requires inverting covariance matrices for classification, but these covariance matrices estimated from small number of samples are usually singular (non-invertible), and 2) large decision risk is inherited from the variance of small samples, through classical LDA training.
+To handle the singular (non-invertible) covariance matrix issue, Ye et al.~\cite{ye2004optimization} uses the Pseudo-inverse of the singular covariance matrix, while Direct LDA~\cite{lu2003face,gao2006direct} uses the \emph{simultaneous diagonalization} of covariance matrices, which are non-singular, to replace the original covariance matrices.
+On the other hand, several works~\cite{clemmensen2011sparse,qiao2008effective,shao2011sparse} have proposed lowering the decision risk via regularizing the estimated covariance matrices.
+
+
+\TheName{} is distinct in three ways.
+First, compared to other data mining approaches to early detection of diseases (e.g.,~\cite{Lindstrom01032003,riskprediction,zheng_predictive_2015,yoo_data_2011}), \TheName{} is the first work that intends to improve the performance of LDA model by addressing data noise and small positive training sample size issues.
+Second our contribution is complementary with these works in EHR data representation~\cite{wang_towards_2012,wang_framework_2012,liu_temporal_2015} and we can further improve \TheName{} by incorporating advanced EHR data representation methods.
+Third, when compared to existing LDA extensions, \TheName{} re-estimates the covariance matrices to (1)  eliminate the effect of data noise to LDA model, (2) lower the decision risk inherited from  small positive training samples, and (3) guarantee the non-singularity of covariance matrices, while~\cite{ye2004optimization,lu2003face,gao2006direct,clemmensen2011sparse,qiao2008effective,shao2011sparse} all focus on regularizing the covariance matrices to enable LDA in a general HDLSS setting.
+Thus, the estimation/optimization problems considered in any single one of the previous studies are mathematically different from ours with different objectives and assumptions.
+
+

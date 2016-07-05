@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{multirow}
+%\usepackage{graphix}
+\usepackage{lscape}
+
+\begin{document}
+%\begin{landscape}
+
+
+\begin{table*}
+\footnotesize{
+\begin{center}
+\caption{Performance Comparison - Testing Sample Size =$200\times 2$.}
+		\label{tab:table11}
+\begin{tabular}{*{14}{c}}
+\toprule
+    & & \multicolumn{12}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){3-14}
+    & & 
+    \multicolumn{3}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    \multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{3}{c}{250} &
+  % \multicolumn{3}{c}{300} &
+    \multicolumn{3}{c}{350} \\
+\cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+Algorithm & Parameters & \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+						\texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} \\
+ \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+    LDA & N/A &   .547 & .539 & .554 &     .617 & .612 & .622     & .639 & .644 & .634     & .661 & .670 & .652 \\
+ 
+     \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+    DIAG & N/A &   .592 & .591 & .594 &     .635 & .635 & .635   &     .639 & .639& .639   & .653 & .660 & .645   \\
+   % \midrule
+    \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+
+    \multirow{3}{*}{Shrinkage($\beta$)} 
+& .25 &   .593& .592 & .595 &     .636 & .638 & .635     & .640 & .643 & .637     & .656 & .665 & .647     \\
+& .50 &   .594 & .592 & .596 &     .630 & .630 & .631   & .641 & .645 & .636     & .660 & .669 & .651    \\
+& .75 &   .592 & .590 & .595 &     .626 & .624 & .628   & .639 & .643 & .635     & .662 & .672 & .652    \\
+    % \midrule
+     \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+     \multirow{5}{*}{DAEHR($\lambda$)} 
+     & $.005*.5^{0}$ &   .644 & .692 & .578 &     \textbf{.667} & .714 & .600     & \textbf{.662} & .716 & .582    & \textbf{.670} & .722 & .595   \\
+     & $.005*.5^{1}$ &   .645 & .694 & .577 &     .666 & .713 & .600     & \textbf{.662} & .716 & .582   & \textbf{.670} & .722 & .595   \\     
+     & $.005*.5^{2}$ &   \textbf{.646} & .697 & .574 &   .663 & .714 & .590     & \textbf{.662} & .716 & .582    & \textbf{.670} & .722 & .595 \\
+     & $.005*.5^{3}$ &   .646 & .694 & .578 &     .661 & .712 & .589     & \textbf{.662} & .716 & .582     & \textbf{.670} & .722 & .595    \\
+     & $.005*.5^{4}$ &   .646 & .696 & .576 &     .662 & .7146 & .588     & \textbf{.662} & .716 & .582    & \textbf{.670} & .722 & .595 \\
+     
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table*}
+
+
+
+\begin{table*}
+\footnotesize{
+\begin{center}
+\caption{Performance Comparison - Testing Sample Size =$1000\times 2$.}
+		\label{tab:table12}
+\begin{tabular}{*{14}{c}}
+\toprule
+    & & \multicolumn{12}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){3-14}
+    & & 
+    \multicolumn{3}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    \multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{3}{c}{250} &
+  % \multicolumn{3}{c}{300} &
+    \multicolumn{3}{c}{350} \\
+\cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+Algorithm & Parameters & \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+						\texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} \\
+ \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+    LDA & N/A &   .552 & .545 & .558 &     .619 & .620 & .619     & .644 & .648 & .639     & .656 & .663 & .647  \\
+ 
+     \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+    DIAG & N/A &   .595 & .588 & .600 &     .624 & .625 & .624     & .641 & .642 & .640    & .653 & .662 & .644 \\
+   % \midrule
+    \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+
+    \multirow{3}{*}{Shrinkage($\beta$)} 
+
+& .25 &   .596 & .592 & .599 &     .629 & .631 & .626     & .644 & .648 & .641     & .657 & .667 & .647    \\   			& .50 &   .594 & .589 & .599 &     .630 & .633 & .627     & .646 & .649 & .642    & .660 & .670 & .650    \\
+& .75 &   .590 & .584 & .596 &     .629 & .632 & .626     & .647 & .650 & .643    & .660 & .668 & .650    \\
+    % \midrule
+     \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+\cmidrule(lr){9-11}
+\cmidrule(lr){12-14}
+     \multirow{5}{*}{DAEHR($\lambda$)} 
+     & $.005*.5^{0}$ &   .653 & .711 & .566 &     \textbf{.655} & .716 & .560     & .666 & .718 & .591    & \textbf{.667} & .720 & .588   \\
+     & $.005*.5^{1}$ &   .653 & .711 & .566 &     \textbf{.655} & .716 & .560     & .666 & .718 & .590     & \textbf{.667} & .720 & .588   \\     
+     & $.005*.5^{2}$ &   \textbf{.653} & .712  & .565 &     \textbf{.655} & .716 & .560      & .666 & .720 & .588    & \textbf{.666} & .720 & .588   \\
+     & $.005*.5^{3}$ &   .652 & .710 & .567 &     \textbf{.655} & .716 & .560     & .666 & .719 & .588     &\textbf{.667} & .720 & .588    \\
+     & $.005*.5^{4}$ &   .652 & .710 & .567 &     \textbf{.655} & .716 & .560      & \textbf{.667} & .720 & .588    & \textbf{.667} & .720 & .588   \\     
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table*}
+
+
+% table for Haoyi @ Oct 26
+\begin{table*}
+\footnotesize{
+\begin{center}
+\caption{Performance Comparison - Testing Sample Size =$1000\times 2$.}
+		\label{tab:table13}
+\begin{tabular}{*{8}{c}}
+\toprule
+    & & \multicolumn{6}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){3-8}
+    & & 
+    \multicolumn{3}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    %\multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{3}{c}{250} \\
+  % \multicolumn{3}{c}{300} &
+    %\multicolumn{3}{c}{350} \\
+\cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+Algorithm & Parameters & \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+						%\texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                          % \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} \\
+ \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LDA & N/A &   .551 & .549 & .553 &     .639 & .641 & .638 \\
+ 
+     \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LR & N/A &   .614 & .521 & .677 &     .615 & .501 & .687 \\
+    
+    \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    SVM & N/A &   .614 & .608 & .619 &     .660 & .669 & .650 \\
+   % \midrule
+    \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+
+   \multirow{2}{*}{AB($num$)}  & 10 &   .643 & .599& .679 &     .629 & .538& .690     \\   			
+    & 50 &    .633 & .568 & .681 &     .633 & .550 & .691      \\
+
+    % \midrule
+     \cmidrule(lr){1-2}                        
+ \cmidrule(lr){3-5}
+\cmidrule(lr){6-8}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    % \multirow{5}{*}{DAEHR($\lambda$)} 
+     DAEHR($\lambda$) &  $.005*.5^{2}$ &  \textbf{.658} & .695 & .612 &     \textbf{.684} & .719 & .638     \\
+       
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table*}
+
+
+
+% table for Haoyi @ Oct 26------compressed version
+\begin{table*}
+\footnotesize{
+\begin{center}
+\caption{Performance Comparison - Testing Sample Size =$1000\times 2$.}
+		\label{tab:table13_compressed}
+\begin{tabular}{*{7}{c}}
+\toprule
+    &  \multicolumn{6}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){2-7}
+    &  
+    \multicolumn{3}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    %\multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{3}{c}{250} \\
+  % \multicolumn{3}{c}{300} &
+    %\multicolumn{3}{c}{350} \\
+\cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+Algorithm & \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+						%\texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                          % \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} \\
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LDA &   .551 & .549 & .553 &     .639 & .641 & .638 \\
+ 
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LR &   .614 & .521 & .677 &     .615 & .501 & .687 \\
+    
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    SVM  &   .614 & .608 & .619 &     .660 & .669 & .650 \\
+   % \midrule
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+
+   AB-10 &   .643 & .599& .679 &     .629 & .538& .690     \\   
+   \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+			
+    AB-50 &    .633 & .568 & .681 &     .633 & .550 & .691      \\
+
+    % \midrule
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    % \multirow{5}{*}{DAEHR($\lambda$)} 
+     DAEHR($\lambda=.005*.5^{2}$) &  \textbf{.658} & .695 & .612 &     \textbf{.684} & .719 & .638     \\
+       
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table*}
+%\end{landscape}
+\end{document}

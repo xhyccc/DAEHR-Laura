@@ -1,0 +1,137 @@
+\begin{table*}
+{
+\begin{center}
+\caption{Performance Comparison between \TheName\ and LDA Baselines (Testing Sample Size =$200\times 2$), where ``ACC.'' refers to accuracy and ``F1.'' refers to F1-Score}
+		\label{tab:table11}
+\begin{tabular}{*{10}{c}}
+\toprule
+    & & \multicolumn{8}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){3-10}
+    & & 
+    \multicolumn{2}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    \multicolumn{2}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{2}{c}{250} &
+  % \multicolumn{3}{c}{300} &
+    \multicolumn{2}{c}{350} \\
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+Algorithm & Parameters & \texttt{ACC.} & \texttt{F1.} & 
+									   	 \texttt{ACC.} & \texttt{F1.} & 
+                          			 \texttt{ACC.} & \texttt{F1.} & 
+                           			 \texttt{ACC.} & \texttt{F1.} \\
+ \cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+    LDA & N/A &   0.547 & 0.539   &     0.617 & 0.612       & 0.639 & 0.644      & 0.661 & 0.670 \\
+ 
+\cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+    DIAG & N/A &   0.592 & 0.591 &      0.635 & 0.635 &      0.639 & 0.639&   0.653 & 0.660    \\
+   % \midrule
+    \cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+
+    \multirow{3}{*}{Shrinkage($\beta$)} 
+& 0.25 &   0.593& 0.592 &      0.636 & 0.638      & 0.640 & 0.643      & 0.656 & 0.665      \\
+& 0.50 &   0.594 & 0.592 &      0.630 & 0.630    & 0.641 & 0.645     & 0.660 & 0.669     \\
+& 0.75 &   0.592 & 0.590 &      0.626 & 0.624    & 0.639 & 0.643      & 0.662 & 0.672   \\
+    % \midrule
+\cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+     \multirow{5}{*}{\TheName($\lambda$)} 
+     & $0.005*0.5^{0}$ &   0.644 & 0.692 &     \textbf{0.667} & 0.714      & \textbf{0.662} & \textbf{0.716}     & \textbf{0.670} & \textbf{0.722}    \\
+     & $0.005*0.5^{1}$ &   0.645 & 0.694 &     0.666 & 0.713      & \textbf{0.662} & \textbf{0.716}    & \textbf{0.670} & \textbf{0.722}    \\     
+     & $0.005*0.5^{2}$ &   \textbf{0.646} & \textbf{0.697} &  0.663 & 0.714      & \textbf{0.662} & \textbf{0.716}     & \textbf{0.670} & \textbf{0.722}  \\
+     & $0.005*0.5^{3}$ &   \textbf{0.646} & 0.694 &     0.661 & 0.712     & \textbf{0.662} & \textbf{0.716}     & \textbf{0.670} & \textbf{0.722}   \\
+     & $0.005*0.5^{4}$ &   \textbf{0.646} & 0.696 &     0.662 & \textbf{0.715}     & \textbf{0.662} & \textbf{0.716}     & \textbf{0.670} & \textbf{0.722}  \\
+     
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table*}
+
+
+\begin{table*}
+{
+\begin{center}
+\caption{Performance Comparison between \TheName\ and LDA Baselines  (Testing Sample Size =$1000\times 2$), where ``ACC.'' refers to accuracy and ``F1.'' refers to F1-Score}
+		\label{tab:table12}
+\begin{tabular}{*{10}{c}}
+\toprule
+    & & \multicolumn{8}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){3-10}
+    & & 
+    \multicolumn{2}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    \multicolumn{2}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{2}{c}{250} &
+  % \multicolumn{3}{c}{300} &
+    \multicolumn{2}{c}{350} \\
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+Algorithm & Parameters & \texttt{ACC.} & \texttt{F1.} &
+						\texttt{ACC.} & \texttt{F1.} &
+                           \texttt{ACC.} & \texttt{F1.}  &
+                           \texttt{ACC.} & \texttt{F1.}  \\
+ \cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+    LDA & N/A &   0.552 & 0.545  &     0.619 & 0.620      & 0.644 & 0.648      & 0.656 & 0.663  \\
+ 
+     \cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+    DIAG & N/A &   0.595 & 0.588  &     0.624 & 0.625      & 0.641 & 0.642     & 0.653 & 0.662  \\
+   % \midrule
+    \cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+
+    \multirow{3}{*}{Shrinkage($\beta$)} 
+
+& 0.25 &   0.596 & 0.592  &     0.629 & 0.631     & 0.644 & 0.648      & 0.657 & 0.667     \\   			& 0.50 &   0.594 & 0.589 &     0.630 & 0.633      & 0.646 & 0.649     & 0.660 & 0.670     \\
+& 0.75 &   0.590 & 0.584  &     0.629 & 0.632     & 0.647 & 0.650     & 0.660 & 0.668     \\
+    % \midrule
+     \cmidrule(lr){1-2}                        
+\cmidrule(lr){3-4}
+\cmidrule(lr){5-6}
+\cmidrule(lr){7-8}
+\cmidrule(lr){9-10}
+     \multirow{5}{*}{\TheName($\tau$)} 
+     & $0.005*0.5^{0}$ &   0.653 & 0.711 &     \textbf{0.655} & \textbf{0.716}      & 0.666 & 0.718     & \textbf{0.667} & \textbf{0.720}    \\
+     & $0.005*0.5^{1}$ &   0.653 & 0.711  &     \textbf{0.655} & \textbf{0.716}      & 0.666 & 0.718      & \textbf{0.667} & \textbf{0.720}   \\     
+     & $0.005*0.5^{2}$ &   \textbf{0.653} & \textbf{0.712} &     \textbf{0.655} & \textbf{0.716}      & 0.666 & \textbf{0.720}     & \textbf{0.667} & \textbf{0.720}  \\
+     & $0.005*0.5^{3}$ &   0.652 & 0.710  &     \textbf{0.655} & \textbf{0.716}      & 0.666 & 0.719     &\textbf{0.667} & \textbf{0.720}    \\
+     & $0.005*0.5^{4}$ &   0.652 & 0.710  &     \textbf{0.655} & \textbf{0.716}       & \textbf{0.667} & \textbf{0.720}     & \textbf{0.667} & \textbf{0.720}    \\     
+     \bottomrule
+ 
+\end{tabular}
+\end{center}}
+\end{table*}

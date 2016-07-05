@@ -1,0 +1,143 @@
+\section{Introduction}
+
+With the rapid development of medical big data, forecasting future or potential diseases based on patients' past medical records has emerged as a promising approach towards prevention and earlier diagnosis of high-risk diseases.
+Historical clinical details from the EHR such as diagnoses and procedures have the potential to predict future disease state or risk of an individual patient from a large corpus of patients. These high-risk patients can then receive targeted care to employ disease prevention techniques in advance. Naturally, the accuracy of such early detection is crucial to improving the efficiency of high-risk patient identification and disease prevention.
+%%Rather than individualizing patients (e.g., screening or counseling), a medical informatics system can predict each patient's potential diseases using his or her past diagnoses as well as diagnoses collected from many other patients.
+%In this way, the medical system can identify high-risk patients from a large corpus of patients with low cost.
+
+In this paper, we present \TheName{}---an extended linear discriminant analysis (LDA)~\cite{fisher1936use,mclachlan2004discriminant} framework for early detection of diseases using Electronic Health Records (EHR), which can improve the prediction accuracy of the standard LDA model by reducing the noise in EHR data and regularizing the estimated covariance matrices. We first discuss the motivation and background of this research and then we formulate a new research problem based on our observations and assumptions. Next, we elaborate the technical challenges of the proposed research and summarize our technical contributions.
+ 
+
+\subsection{Motivation and Background}
+
+%%you should cite more relevant related work to mental health disorders and prediction
+To predict patients' potential diseases according to their past medical records, a variety of predictive models utilizing heterogeneous medical data have been studied~\cite{soni2011predictive,palaniappan2008intelligent,kumari2011comparative}. For example,  chest imaging has been used for early detection of chest cancer, questionnaire-based assessment (e.g., PHQ-9~\cite{kroenke2002phq}) data for predicting mental health disorders, and screening data for predicting heart disease~\cite{d2001validation}. Among these medical data, Electronic Health Records (EHR) consisting of the diagnosis and treatment records from patients' visits are used as a general purpose data source that enables early detection of diseases based on the previous diagnoses at a massive scale. Furthermore, this data is more accessible to clinicians and researchers, and holds comprehensive information of patients' medical history especially within the primary care setting. Thus, EHR data provides a promising opportunity for  early detection of diseases due to its generality, accessibility and standardized use and features across health centers.
+ 
+
+As shown in Fig.~\ref{fig:exp-ehr}, an individual patient's EHR data consists of a temporal record of their past diagnoses and treatments by visit. Note that all diagnoses are recorded using ICD-9 codes~\cite{dubberke2006icd}, where each evidence of diagnosis corresponds to a specific ICD-9 code. Several methods have been studied to predict the future disease state of patients using historical diagnosis records in EHR data ~\cite{personalized2015,amarasingham2010automated,pittman2004integrated,jensen2012mining}. Given a disease as the prediction target (e.g., anxiety/depression) as well as the EHR data of a large population with or without the target disease, most existing methods first represent each given patient's EHR data using a set of features, and then train a predictive model using features and labels (whether each patient is diagnosed with the target disease or not) in a supervised manner. Further, given each new patient's EHR data, these models predict if the given patient will develop the targeted disease in near future using the trained predictive model.
+ 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.88\textwidth]{./img/Patient.png}
+\caption{An Example of a Patient's EHR Data}
+\label{fig:exp-ehr}
+\end{figure}
+
+
+\textbf{EHR Data Representation for Early Detection.} There are many existing approaches to representation of EHR data including the use of diagnosis-frequencies~\cite{sun2012supervised,7091853,personalized2015}, pairwise diagnosis transition~\cite{zhang_mseq_2015,jensen2001mining}, and graph representations of diagnosis sequences~\cite{liu_temporal_2015}. Among these approaches, the diagnosis-frequency is a common way to represent EHR data. Given each patient's EHR data, which consists of the patient's demographic information and a sequence of past visits, existing methods first retrieve the diagnosis codes recorded during each visit. Next, the frequency of each diagnosis appearing in all past visits are counted, followed by further transformation on the frequency of each diagnosis into a vector of frequencies (e.g., $\langle 1, 0, \dots, 3\rangle$, where 0 means the second diagnosis does not exist in all past visits). In this way, each patient having differing number of visits and each visit consisting of multiple diagnoses is represented as a fixed-length data vector, which can be handled by common machine learning algorithms.
+ 
+%%You might want to say something about the increasing complexity once you add procedures as well...
+Note that the diagnosis-frequency representation of EHR data is usually with ultra-high dimensions; for example, there are more than 15,000 standard ICD-9 codes in EHR scheme, thus the diagnosis-frequency vector using raw ICD-9 codes contains thousands of dimensions~\cite{clusteredcodes}.
+%
+%%this isnt very clear... maybe we should just cite our paper.. see alternative and make sure to cite AHRQ paper
+%% I just want readers feel it is a common way to do it, not our special treatments
+To reduce the the dimensionality of the data, clinical professionals may suggest using clustered code set~\cite{clusteredcodes}, where each ICD-9 code can map to  one of the 295 clustered codes~\cite{zhang_mseq_2015}. Thus, each raw diagnosis-frequency vector can be compressed to a vector of around 200 dimensions using clustered codes.
+
+%In order to reduce the the dimensionality of the data, we propose the use of the AHRQ Clinical Classification Scheme, a diagnosis and procedure categorization scheme, which maps individual diagnosis codes into $295$ meaningful clinical groups \cite{zhang_mseq_2015}. Thus, each raw diagnosis-frequency vector can be compressed to a vector of around 200 dimensions using clustered codes.
+ 
+
+\textbf{Supervised Learning for Early Detection.} Given an EHR database and a target disease for early detection, existing methods first select patients both with and without the disease, then use an appropriate representation of their EHR data to form a training set.
+To train an accurate predictive model with the training set, many machine learning methods such as Support Vector Machine (SVM), Random Forest (RF), Bayesian Network, Gaussian Process and Linear Discriminant Analysis (LDA) have been adopted~\cite{sun2012supervised,7091853,personalized2015,zhang_mseq_2015,jensen2001mining,liu_temporal_2015,cazzanti_local_2007}. Among these machine learning methods, LDA is frequently used as one of the common performance benchmarks in a series of studies~\cite{cazzanti_local_2007,zhang_mseq_2015,kalina2013selecting,karlsson2014handling,wang2014clinical}, because it effectively reduces dimensionality.
+
+For example, when using diagnosis-frequency vector as the representation of EHR data, a LDA model learns a linear combination of diagnoses (from the all diagnoses) that can optimally separate patients into the two groups (i.e., with/without the disease).
+Then LDA predicts whether new patients will develop the targeted disease by separating their vectors into the two groups using the linear combination.
+ 
+Like many other statistical learning models, the accuracy of a LDA model can be improved, when more samples are available for training.
+This is because the decision risk (or namely expected loss)~\cite{berger2013statistical} of a LDA model is inherited from the variance of its training samples, while \emph{increasing the sample size lowers the sample variance}~\cite{hsu1947complete,qiao2008effective}. In contrast, when there are few training samples (especially when the number of training samples is less than the number of dimensions), the model cannot produce any valid prediction results.
+%
+%%This is  sentence fragment- not sure what you meant
+Because LDA needs to use the \emph{inverse of the covariance matrices} to make prediction, while in such case the covariance matrices estimated in LDA are not invertible or namely singular~\cite{huang2002solving,gao2006direct}.
+ 
+
+With above backgrounds in mind, we are motivated to enhance supervised learning methodologies building upon high-dimensional EHRs data so as to improve the prediction accuracy for early detection of diseases. Specifically, we study the LDA model using the diagnosis-frequency features, because of the clinical relevance and application of such methods to early disease detection.
+ 
+
+\subsection{Research Assumptions and Objectives}
+
+Our research is based on following two  observations and two assumptions about EHR data and early detection settings:
+
+\textbf{Observation 1.  EHR Encoding Variation -- }  In terms of encoding EHR data, the diagnosis records are input manually by clinicians without a unified encoding scheme.
+Our previous work~\cite{alicia2015evaluating} finds that, for a single patient, there may be a higher number of diagnosis records for one disease than the number of times that the disease as been diagnosed.
+For example, consider three clinicians  Ann,  Bob, and Carl, all working in the same  clinic.
+A single patient has been  diagnosed with \emph{upper respiratory infection} (ICD-9 code:  465.9).
+Ann may leave only the record of code 465.9 for the first visit  in which the disease is diagnosed.
+However,  Bob may leave the  record in the first visit as well as all of the patient's  returning visits to receive  screening or treatment  for  upper respiratory infection.
+Carl may leave a record in the first visit and in some of the returning visits at his discretion.
+
+
+%\emph{three clinicians--Ann, Bob and Carl are working in the same clinics. Given a patient has been diagnosed with upper respiratory infection (ICD-9 code: 465.9), Ann may only leave the record  of code 465.9 in the first visit when the disease is diagnosed. However Bob may leave the record in the first visit as well as all his/her returning visits to receive screening/treatment for upper respiratory infection; while Carl may leave in the first visit and some of the returning visits that he feels necessary.} 
+
+\textbf{\em Assumption I.  Non-negative Noise in Diagnosis-Frequency Vector Data -- } Based upon the first observation, we assume that each diagnosis is recorded at least one time in the EHR and that the number of records might differ due to clinician or healthcare center encoding style (i.e., \emph{frequency of record $\geq$ frequency of diagnosis} for each specific disease).
+We further assume the encoding variation of EHR data may cause certain unknown \emph{non-negative data noise} in the diagnosis-frequency vectors.
+ 
+
+\textbf{Observation 2.  Limited Positive Training Samples -- } We find that the total number of patients with a specific disease (\emph{positive samples}) might be too few to train a predictive model for early detection of the disease.
+For example, consider a historically black college that wants to identify the high-risk students in terms of mental health disorders using all students' EHR data in the college clinics.
+The clinics first separate all students in to two groups (i.e., with/without mental health disorders diagnosed).
+Then it selects a subset of students from each group as training samples.
+However, psychiatric clinics are typically underutilized by African American~\cite{thompson2004african}, and thus the available training samples that include at least one type of mental health disorders are too few (e.g., 100-500 students) in the school.
+
+
+%\emph{a historically black college wants to identify the risk students in terms of mental health disorder using all students' EHR installed in the college clinics. The clinics first sorts all students to two groups (i.e., with/without mental disorder diagnosed), then from each group it selects a subset of students as training samples. However, due to the low utilization rate of psyclinics by African American, the available training samples with at least one type of mental disorders (e.g., depression, anxiety, mood and personality disorders) are so few (e.g., 100$-$500 students) in their school.} 
+
+\textbf{\em Assumption II.  Decision Risk of LDA Model for Early Detection of Diseases -- } Considering the dimension $p$ of diagnosis-frequency vectors (e.g., $p\geq 200$ using clustered code set), we assume that the size of positive samples for LDA training is relatively small i.e., $0<n\ll 2^p$, where $n$ refers to the number of positive training samples.
+When $0<n<p$, the trained LDA model cannot produce any valid prediction results, since the estimated covariance matrix is singular/non-invertible; when $p\leq n\ll 2^p$ the trained LDA model might be able to produce a valid prediction, but with large decision risk inherited from the variance of small training samples.
+ 
+
+With above two assumptions in mind, our work attempts to reduce the effect of noise while lowering the decision risk of the LDA model for early detection of diseases.
+Specifically we use mental health disorders as the ``target disease'' in evaluation and experiment design, with respect to  {\em Assumption II}.
+
+
+\subsection{Technical Issues and Contributions} 
+In order to improve LDA with respect to the two assumptions, we address the following three technical issues:
+%
+\begin{enumerate}
+\item \textbf{\em Eliminating the data noise in diagnosis-frequency vectors caused by encoding variation -- } Given the frequency-diagnosis vectors for training, LDA first estimates diagnosis-to-diagnosis covariance matrices using sample covariance matrix estimator such as \emph{Intrinsic Estimator} or \emph{Maximized Likelihood Estimator (MLE)}, then builds the predictive models using estimated covariance matrices.
+However, our later analysis shows that the non-negative data noise in the vectors might make the estimated covariance matrices more dense than the noise-free (ideal) one.
+In this way, we might need a method to \emph{sparsify} the covariance matrices in order to reduce the effect of data noise to LDA.
+ 
+
+\item \textbf{\em Lowering the decision risk of LDA while guaranteeing non-singularity and positive definiteness of the estimated covariance matrices - } To lower the decision risk associated with LDA, one possible solution is to use the $\ell_1$-penalized estimation of the covariance matrices~\cite{cai2012minimax,xue2012positive}.
+However, any modifications (including $\ell_1$-penalty and sparse approximation) to a coavriance matrix might result in loss of its positive definiteness---we cannot use such modified matrix in the statistics model.
+We need an algorithm to obtain the $\ell_1$-penalized estimation of the sparsifed covariance matrix while ensuring the estimation is non-singular and positive semidefinite.
+
+
+\item \textbf{ \em Incorporating the newly-estimated covariance matrices for improving the performance of EHR-based LDA -- } Given the non-singular/positive-definite $\ell_1$-penalized sparse estimations of the  covariance matrices, we might need use them to replace the covariance matrices originally used in LDA.
+Thus, we need a generic framework to extend the original LDA framework by incorporating the aforementioned covariance matrix estimation algorithms.
+More important, we must make sure that, compared to LDA, the new framework should provide better overall accuracy and F1-score for early detection of the diseases.
+While most existing predictive models consider overall accuracy as the primary performance metrics, F1-score, characterizing both correctness and completeness to identify high-risk patients from large testing samples, is yet another important metric of our problem.
+An early detection framework with higher F1-score usually can identify more high-risk patients with fewer false alarms.
+Note that a predictive model with improved overall accuracy does not necessarily have better F1-score.
+%%Thus, though it might be hard to achieve the two goals together, 
+Thus, we propose a framework that improves both accuracy and F1-score.
+
+
+\end{enumerate}
+%
+With the aforementioned research challenges in mind, we make following technical contributions in this study:
+%
+\begin{itemize}
+\item In this work, we studied the problem of improving the existing Linear Discriminant Analysis (LDA) for early detection of diseases based on our two assumptions.
+To the best of our knowledge, this paper is the first work for LDA-based early detection of diseases built upon EHR data, by addressing the issues of encoding variation and low training sample size.
+
+
+\item In order to address these technical challenges, we proposed \TheName{}---an extending LDA framework.
+%
+%%what do you mean, lower the decision risk?
+We propose a novel approach to eliminate noise and lower the decision risk of LDA models through estimating sparse and non-singular diagnosis-to-diagnosis covariance matrices from diagnosis-frequency vectors.
+Theoretical analysis shows that, with low computational complexity, the proposed algorithm can approximate the $\ell_1$-penalized near-sparsest estimation of the diagnosis-to-diagnosis covariance matrices with non-singularity and positive semi-definiteness guaranteed, even when a very limited number of diagnosis-frequency vectors are given for LDA training.
+
+%%Cite CHSN paper from Keller and Turner
+\item We evaluated \TheName{} using the College Health Surveillance Network (CHSN)~\cite{turner_college_2015}, electronic health record data from student health centers representing more than 300,000 students from 23 US universities. We designed a set of experiments based on CHSN for large-scale early detection of mental health disorders. The experimental results show \TheName{} significantly outperforms three baselines (i.e., LDA and its derivatives) by achieving 1.4\%--19.4\% higher prediction accuracy, and 7.5\%--43.5\% higher F1-score.
+
+
+\end{itemize}
+
+The paper is structured as follows: Section~\ref{sec:2} discusses the previous studies that have been done in the data mining approaches to early detection of disease and LDA extensions.
+Section~\ref{sec:3} introduces the problem formulation of our study and introduces the \TheName{} framework to solved the problem.
+Section~\ref{sec:4} describes two core algorithms used in \TheName{}.
+Section~\ref{sec:5} describes the data used in this research, the experimental design, and the experimental results and analyses.
+Finally, the summary of this work, future work, and clinical context are discussed in Section~\ref{sec:6}.
+ 
+

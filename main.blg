@@ -1,0 +1,196 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: acmtrans.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: sigproc.bib
+Warning--I'm ignoring alicia2015evaluating's extra "author" field
+--line 22 of file sigproc.bib
+Repeated entry---line 288 of file sigproc.bib
+ : @article{gao2006direct
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 298 of file sigproc.bib
+ : @inproceedings{huang2002solving
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 307 of file sigproc.bib
+ : @inproceedings{qiao2008effective
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1286 of file sigproc.bib
+ : @article{riskprediction
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1351 of file sigproc.bib
+ : @article{Lindstrom01032003
+ :                           ,
+I'm skipping whatever remains of this entry
+Warning--string name "spring" is undefined
+--line 1404 of file sigproc.bib
+Repeated entry---line 1710 of file sigproc.bib
+ : @inproceedings{cazzanti_local_2007
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2005 of file sigproc.bib
+ : @article{zheng_predictive_2015
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2036 of file sigproc.bib
+ : @article{huang_toward_2014
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2059 of file sigproc.bib
+ : @article{yoo_data_2011
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2080 of file sigproc.bib
+ : @article{maroco_data_2011
+ :                          ,
+I'm skipping whatever remains of this entry
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6397 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6489 of file acmtrans.bst
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6489 of file acmtrans.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no number and no volume in ACHA2014
+Warning--page numbers missing in both pages and numpages fields in ACHA2014
+Warning--empty address in berger2013statistical
+Warning--page numbers missing in both pages and numpages fields in clemmensen2011sparse
+Warning--empty address in escalante2011alternating
+Warning--empty publisher in huang2002solving
+Warning--empty address in huang2002solving
+Warning--empty publisher in jensen2001mining
+Warning--empty address in jensen2001mining
+Warning--page numbers missing in both pages and numpages fields in jensen2001mining
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Jinghe Zhang, Haoyi Xiong, Yu Huang, Hao Wu, Kevin Leach, Laura E. Barnes" for entry zhang_mseq_2015
+while executing---line 6673 of file acmtrans.bst
+Warning--empty address in zhang_mseq_2015
+Warning--empty publisher in karlsson2014handling
+Warning--empty address in karlsson2014handling
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6673 of file acmtrans.bst
+Too many commas in name 1 of "Kenney Ng, Jimeng Sun, Jianying Hu, Fei Wang" for entry personalized2015
+while executing---line 6673 of file acmtrans.bst
+Warning--no number and no volume in personalized2015
+Warning--page numbers missing in both pages and numpages fields in personalized2015
+Warning--no journal in kumari2011comparative
+Warning--no number and no volume in kumari2011comparative
+Warning--page numbers missing in both pages and numpages fields in kumari2011comparative
+Warning--empty address in mclachlan2004discriminant
+Warning--empty address in nesterov2004introductory
+Warning--empty address in alicia2015evaluating
+Warning--empty publisher in palaniappan2008intelligent
+Warning--empty address in palaniappan2008intelligent
+Warning--empty address in perer_frequence:_2014
+Warning--empty publisher in qiao2008effective
+Warning--empty address in qiao2008effective
+Warning--page numbers missing in both pages and numpages fields in riskprediction
+Warning--no journal in tabachnick2001using
+Warning--no number and no volume in tabachnick2001using
+Warning--page numbers missing in both pages and numpages fields in tabachnick2001using
+Warning--no number and no volume in turner_college_2015
+Warning--empty address in von1951functional
+Warning--empty address in wang_towards_2012
+Warning--no journal in wang_framework_2012
+Warning--no number and no volume in wang_framework_2012
+Warning--page numbers missing in both pages and numpages fields in wang_framework_2012
+Warning--empty publisher in wang2014clinical
+Warning--empty address in wang2014clinical
+You've used 61 entries,
+            5290 wiz_defined-function locations,
+            1597 strings with 27522 characters,
+and the built_in function-call counts, 70172 in all, are:
+= -- 9915
+> -- 2794
+< -- 6
++ -- 872
+- -- 1316
+* -- 4657
+:= -- 7520
+add.period$ -- 312
+call.type$ -- 61
+change.case$ -- 437
+chr.to.int$ -- 59
+cite$ -- 99
+duplicate$ -- 5053
+empty$ -- 3606
+format.name$ -- 1158
+if$ -- 17146
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 242
+newline$ -- 550
+num.names$ -- 486
+pop$ -- 1863
+preamble$ -- 1
+purify$ -- 740
+quote$ -- 0
+skip$ -- 1525
+stack$ -- 0
+substring$ -- 6029
+swap$ -- 557
+text.length$ -- 708
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 824
+warning$ -- 38
+while$ -- 486
+width$ -- 0
+write$ -- 1109
+(There were 42 error messages)

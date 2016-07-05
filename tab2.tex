@@ -1,0 +1,77 @@
+\begin{table*}
+\footnotesize{
+\begin{center}
+\caption{Performance Comparison - Testing Sample Size =$1000\times 2$.}
+		\label{tab:table13_compressed}
+\begin{tabular}{*{7}{c}}
+\toprule
+    &  \multicolumn{6}{c}{Training Set $\times 2$}\\
+    \cmidrule(lr){2-7}
+    &  
+    \multicolumn{3}{c}{50} &
+  %  \multicolumn{3}{c}{100} &
+    %\multicolumn{3}{c}{150} &
+  % \multicolumn{3}{c}{200} &
+    \multicolumn{3}{c}{250} \\
+  % \multicolumn{3}{c}{300} &
+    %\multicolumn{3}{c}{350} \\
+\cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+Algorithm & \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+						%\texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                          % \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} &
+                           \texttt{ACC.} & \texttt{SEN.} & \texttt{SPE.} \\
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LDA &   .551 & .549 & .553 &     .639 & .641 & .638 \\
+ 
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    LR &   .614 & .521 & .677 &     .615 & .501 & .687 \\
+    
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    SVM  &   .614 & .608 & .619 &     .660 & .669 & .650 \\
+   % \midrule
+    \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+
+   AB-10 &   .643 & .599& .679 &     .629 & .538& .690     \\   
+   \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+			
+    AB-50 &    .633 & .568 & .681 &     .633 & .550 & .691      \\
+
+    % \midrule
+     \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+%\cmidrule(lr){9-11}
+%\cmidrule(lr){12-14}
+    % \multirow{5}{*}{DAEHR($\lambda$)} 
+     DAEHR($\lambda=.005*.5^{2}$) &  \textbf{.658} & .695 & .612 &     \textbf{.684} & .719 & .638     \\
+       
+     \bottomrule
+ 
+\end{tabular}
+
+\end{center}
+}
+\end{table*}

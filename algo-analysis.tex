@@ -1,0 +1,42 @@
+\subsection{Algorithm Analysis}
+\label{sec:analysis}
+
+\TheName{} consists of two phases: \emph{Phase I: Sparse Covariance Matrix Estimation} and \emph{Phase II: LDA Modeling and Prediction}.
+According to~\cite{hamsici2008bayes}, under certain assumptions, given the parameters ($\mu_+$,$\Sigma_+$,$\mu_-$,$\Sigma_-$) estimated in \emph{Phase I}, the prediction result of \emph{Phase II} (i.e., Equation~\ref{eq:glda}) is considered to be the Bayes optimal solution based on the estimated parameters.
+In this case, the overall performance highly depends on the way that \TheName{} estimates parameters in \emph{Phase I} i.e., \emph{iterative sparse covariance matrix approximation} process shown in Algorithm~\ref{alg:iap}.
+We first discuss the performance of Algorithm~\ref{alg:iap} in the rest of this section; then we discuss the assumptions when Phase II is optimal in the Discussion section.
+
+To understand theoretical properties of the \emph{iterative sparse covariance matrix approximation} process, we first analyze the core algorithms used in the process, then we conclude the overall performance of the whole approximation process. 
+In each iteration of the process, there are two major steps:
+\begin{itemize}
+\item \textbf{$\ell_1$-penalized sparse matrix estimation. } As discussed, when $\lambda\geq 0$, the objective function in Equation~\ref{eq:sparse-imp} is convex, the proximal gradient descent algorithm can approximate the optimal solution of Equation~\ref{eq:sparse-imp} when the algorithm converges. 
+Further, we conclude that the result $\Sigma_{t+\frac{1}{2}}\in G$, where $G$ is a convex set.
+
+\item \textbf{Nearest positive semidefinite matrix approximation. } According to~\cite{higham2002computing}, when $k\to+\infty$, the output $\Sigma_{t+1}$ could converge to the nearest correlation matrix of the symmetric matrix $H_0$, while $H_0=\frac{1}{2}(\Sigma_{t+\frac{1}{2}}+\Sigma_{t+\frac{1}{2}}^T)$ is the nearest symmetric matrix of $\Sigma_{t+\frac{1}{2}}$ in terms of the Frobenius norm.
+That is, 
+$$H_o=arg\min_{H} ||H-\Sigma_{t+\frac{1}{2}}||_F^2\emph{ s.t. }H=H^T.$$ 
+In this case, we can conclude that, given the sparse estimation $\Sigma_{t+\frac{1}{2}}$, Algorithm~\ref{alg:apm} outputs $\Sigma_{t+1}$, the nearest correlation matrix of $\Sigma_{t+\frac{1}{2}}$. 
+Note that the correlation matrix is a positive semidefinite matrix and can be used for linear discriminant analysis after appropriate training (e.g., Phase II of \TheName{})~\cite{tabachnick2001using}.
+Further, as both projections $P_U$ and $P_S$ are on convex sets~\cite{higham2002computing}, we can conclude $\Sigma_{t+1}\in D$, where $D$ is a convex set.
+
+\end{itemize}
+%
+%
+%
+Until now, we have shown that each step of the \emph{iterative sparse covariance matrix approximation} process can obtain the optimal solutions of the corresponding optimization problems (which are the two sub-problems of our original problem); the optimization results of the two steps are located in two convex sets, namely $G$ and $D$. 
+
+With optimality of the two steps in mind, we now analyze the \emph{iterative sparse covariance matrix approximation} process which combines the two steps. 
+Indeed, this process is similar to a process of Alternating Projections~\cite{von1951functional,escalante2011alternating}. 
+In each iteration (e.g., the $t^{th}$ iteration) of the process, the algorithm first projects the matrix $\Sigma_{t}$ to its $\ell_1$-penalized sparse estimation $\Sigma_{t+\frac{1}{2}}\in G$, then the algorithm projects $\Sigma_{t+\frac{1}{2}}$ to its nearest correlation matrix (positive semidefinite estimation) $\Sigma_{t+1}\in D$. 
+The algorithm alternatively repeats these two projections until meeting the stopping criterion. 
+According to~\cite{cheney1959proximity,bregman1967relaxation}, when $t\to+\infty$, the \emph{iterative sparse covariance matrix approximation} process converges (i.e., $||\Sigma_{t+1}-\Sigma_t||\to 0$\footnote{Please refer to~\cite{bregman1967relaxation} for the proof of convergence when $D\cap G\neq\emptyset$, and see~\cite{cheney1959proximity} for the case when $D\cap G=\emptyset$. 
+To better understand the performance of alternating projections, readers are encouraged to refer to~\cite{escalante2011alternating}.}).
+
+Specifically, when  $D\cap G\neq\emptyset$ and $k\to+\infty$,  we can find $||\Sigma_{t+1}-\Sigma_t||=||\Sigma_{t}-\Sigma_{t+\frac{1}{2}}||\to 0$ and the iterative process converges at the optimal solution of the positive-semidefinite $\ell_1$-penalized sparse estimation of the correlation matrices. 
+Note that the positive definite $\ell_1$-penalized sparse estimation of covariance matrices is considered to be the \emph{minimax-risk} solution for covariance matrix estimation in HDLSS~\cite{cai2012minimax,xue2012positive}. 
+Thus, our \emph{iterative sparse covariance matrix approximation} can achieve the optimal correlation matrices in terms of \emph{minimax-risk}, when  $D\cap G\neq\emptyset$. 
+However, when $D\cap G=\emptyset$, the iterative process converges at a stationary point (non-optimal). 
+In this case, the estimated covariance matrices satisfy positive-semidefinite constraint and the $\ell_1$-norms of these matrices are low.\footnote{The scope of convex sets $D$ and $G$ highly depends on the given data and cannot be determined in advanced.} 
+Therefore, we conclude the \TheName{} framework is a quasi-optimal solution to the proposed research problem in this study.
+
+%\appd{Hereby, rather than straightforwardly solving the problem addressed in Eq.~\ref{eq:problem}, \TheName\ actually estimates the $\ell_1$-penalized sparse correlation matrix based on training samples. Thus, we conclude \TheName\ is a quasi-optimal solution of the proposed problem.}

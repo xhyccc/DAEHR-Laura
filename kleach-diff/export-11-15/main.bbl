@@ -1,0 +1,680 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{{\tt DOI:}\penalty0{#1}\ }
+  \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       #1{#1}          \fi
+
+\bibitem[\protect\citeauthoryear{Amarasingham, Moore, Tabak, Drazner, Clark,
+  Zhang, Reed, Swanson, Ma, and Halm}{Amarasingham et~al\mbox{.}}{2010}]%
+        {amarasingham2010automated}
+{Ruben Amarasingham}, {Billy~J Moore}, {Ying~P Tabak}, {Mark~H Drazner},
+  {Christopher~A Clark}, {Song Zhang}, {W~Gary Reed}, {Timothy~S Swanson},
+  {Ying Ma}, {and} {Ethan~A Halm}. 2010.
+\newblock \showarticletitle{An automated model to identify heart failure
+  patients at risk for 30-day readmission or death using electronic medical
+  record data}.
+\newblock {\em Medical care\/} {48}, 11 (2010), 981--988.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{{American College Health
+  Association}}{{American College Health Association}}{2014}]%
+        {ACHA2014}
+{{American College Health Association}}. 2014.
+\newblock \showarticletitle{{American College Health Association National
+  College Health Assessment}}.
+\newblock {\em Spring 2014 Reference Group Executive Summary\/} (2014).
+\newblock
+\showURL{%
+\url{http://www.ijme.net/archive/2/communication-training-and-perceived-patient-similarity/}}
+
+
+\bibitem[\protect\citeauthoryear{Bregman}{Bregman}{1967}]%
+        {bregman1967relaxation}
+{Lev~M Bregman}. 1967.
+\newblock \showarticletitle{The relaxation method of finding the common point
+  of convex sets and its application to the solution of problems in convex
+  programming}.
+\newblock {\em USSR computational mathematics and mathematical physics\/} {7},
+  3 (1967), 200--217.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Cai and Zhou}{Cai and Zhou}{2012}]%
+        {cai2012minimax}
+{T~Tony Cai} {and} {Harrison~H Zhou}. 2012.
+\newblock \showarticletitle{Minimax estimation of large covariance matrices
+  under l1 norm}.
+\newblock {\em Statistica Sinica\/} {22}, 4 (2012), 1319--1378.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Cazzanti and Gupta}{Cazzanti and
+  Gupta}{2007}]%
+        {cazzanti_local_2007}
+{Luca Cazzanti} {and} {Maya~R. Gupta}. 2007.
+\newblock \showarticletitle{Local {Similarity} {Discriminant} {Analysis}}. In
+  {\em Proceedings of the 24th {International} {Conference} on {Machine}
+  {Learning}} {\em ({ICML} '07)}. ACM, New York, NY, USA, 137--144.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Cheney and Goldstein}{Cheney and
+  Goldstein}{1959}]%
+        {cheney1959proximity}
+{Ward Cheney} {and} {Allen~A Goldstein}. 1959.
+\newblock \showarticletitle{Proximity maps for convex sets}.
+\newblock {\it Proc. Amer. Math. Soc.} {10}, 3 (1959), 448--450.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Clemmensen, Hastie, Witten, and
+  Ersb{\o}ll}{Clemmensen et~al\mbox{.}}{2011}]%
+        {clemmensen2011sparse}
+{Line Clemmensen}, {Trevor Hastie}, {Daniela Witten}, {and} {Bjarne
+  Ersb{\o}ll}. 2011.
+\newblock \showarticletitle{Sparse discriminant analysis}.
+\newblock {\em Technometrics\/} {53}, 4 (2011).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{D'Agostino~Sr, Grundy, Sullivan, Wilson,
+  et~al\mbox{.}}{D'Agostino~Sr et~al\mbox{.}}{2001}]%
+        {d2001validation}
+{Ralph~B D'Agostino~Sr}, {Scott Grundy}, {Lisa~M Sullivan}, {Peter Wilson},
+  {and} {others}. 2001.
+\newblock \showarticletitle{Validation of the Framingham coronary heart disease
+  prediction scores: results of a multiple ethnic groups investigation}.
+\newblock {\em Jama\/} {286}, 2 (2001), 180--187.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dubberke, Reske, McDonald, and
+  Fraser}{Dubberke et~al\mbox{.}}{2006}]%
+        {dubberke2006icd}
+{Erik~R Dubberke}, {Kimberly~A Reske}, {L~Clifford McDonald}, {and} {Victoria~J
+  Fraser}. 2006.
+\newblock \showarticletitle{ICD-9 codes and surveillance for Clostridium
+  difficile--associated disease}.
+\newblock {\em Emerging infectious diseases\/} {12}, 10 (2006), 1576.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Escalante and Raydan}{Escalante and
+  Raydan}{2011}]%
+        {escalante2011alternating}
+{Ren{\'e} Escalante} {and} {Marcos Raydan}. 2011.
+\newblock {\em Alternating projection methods}. Vol.~8.
+\newblock SIAM.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fisher}{Fisher}{1936}]%
+        {fisher1936use}
+{Ronald~A Fisher}. 1936.
+\newblock \showarticletitle{The use of multiple measurements in taxonomic
+  problems}.
+\newblock {\em Annals of eugenics\/} {7}, 2 (1936), 179--188.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gao and Davis}{Gao and Davis}{2006}]%
+        {gao2006direct}
+{Hui Gao} {and} {James~W Davis}. 2006.
+\newblock \showarticletitle{Why direct LDA is not equivalent to LDA}.
+\newblock {\em Pattern Recognition\/} {39}, 5 (2006), 1002--1006.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gotz, Wang, and Perer}{Gotz
+  et~al\mbox{.}}{2014}]%
+        {gotz_methodology_2014}
+{David Gotz}, {Fei Wang}, {and} {Adam Perer}. 2014.
+\newblock \showarticletitle{A methodology for interactive mining and visual
+  analysis of clinical event patterns using electronic health record data}.
+\newblock {\em Journal of Biomedical Informatics\/}  {48} (April 2014),
+  148--159.
+\newblock
+\showISSN{1532-0464}
+\showDOI{%
+\url{http://dx.doi.org/10.1016/j.jbi.2014.01.007}}
+
+
+\bibitem[\protect\citeauthoryear{Hamsici and Martinez}{Hamsici and
+  Martinez}{2008}]%
+        {hamsici2008bayes}
+{Onur~C Hamsici} {and} {Aleix~M Martinez}. 2008.
+\newblock \showarticletitle{Bayes optimality in linear discriminant analysis}.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on\/} {30}, 4 (2008), 647--657.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Higham}{Higham}{2002}]%
+        {higham2002computing}
+{Nicholas~J Higham}. 2002.
+\newblock \showarticletitle{Computing the nearest correlation matrix—a
+  problem from finance}.
+\newblock {\em IMA journal of Numerical Analysis\/} {22}, 3 (2002), 329--343.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hsu and Robbins}{Hsu and Robbins}{1947}]%
+        {hsu1947complete}
+{Pao-Lu Hsu} {and} {Herbert Robbins}. 1947.
+\newblock \showarticletitle{Complete convergence and the law of large numbers}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America\/} {33}, 2 (1947), 25.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Huang, Liu, Lu, and Ma}{Huang
+  et~al\mbox{.}}{2002}]%
+        {huang2002solving}
+{Rui Huang}, {Qingshan Liu}, {Hanqing Lu}, {and} {Songde Ma}. 2002.
+\newblock \showarticletitle{Solving the small sample size problem of LDA}. In
+  {\em Pattern Recognition, 2002. Proceedings. 16th International Conference
+  on}, Vol.~3. IEEE, 29--32.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Huang, LePendu, Iyer, Tai-Seale, Carrell, and
+  Shah}{Huang et~al\mbox{.}}{2014a}]%
+        {huang_toward_2014}
+{Sandy~H. Huang}, {Paea LePendu}, {Srinivasan~V. Iyer}, {Ming Tai-Seale},
+  {David Carrell}, {and} {Nigam~H. Shah}. 2014a.
+\newblock \showarticletitle{Toward personalizing treatment for depression:
+  predicting diagnosis and severity}.
+\newblock {\em Journal of the American Medical Informatics Association:
+  JAMIA\/} {21}, 6 (Dec. 2014), 1069--1075.
+\newblock
+\showISSN{1527-974X}
+\showDOI{%
+\url{http://dx.doi.org/10.1136/amiajnl-2014-002733}}
+
+
+\bibitem[\protect\citeauthoryear{Huang, LePendu, Iyer, Tai-Seale, Carrell, and
+  Shah}{Huang et~al\mbox{.}}{2014b}]%
+        {huang2014toward}
+{Sandy~H Huang}, {Paea LePendu}, {Srinivasan~V Iyer}, {Ming Tai-Seale}, {David
+  Carrell}, {and} {Nigam~H Shah}. 2014b.
+\newblock \showarticletitle{Toward personalizing treatment for depression:
+  predicting diagnosis and severity}.
+\newblock {\em Journal of the American Medical Informatics Association\/} {21},
+  6 (2014), 1069--1075.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jensen, Jensen, and Brunak}{Jensen
+  et~al\mbox{.}}{2012}]%
+        {jensen2012mining}
+{Peter~B Jensen}, {Lars~J Jensen}, {and} {S{\o}ren Brunak}. 2012.
+\newblock \showarticletitle{Mining electronic health records: towards better
+  research applications and clinical care}.
+\newblock {\em Nature Reviews Genetics\/} {13}, 6 (2012), 395--405.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jensen and SPSS}{Jensen and SPSS}{2001}]%
+        {jensen2001mining}
+{Susan Jensen} {and} {UK SPSS}. 2001.
+\newblock \showarticletitle{Mining medical data for predictive and sequential
+  patterns: PKDD 2001}. In {\em Proceedings of the 5th European Conference on
+  Principles and Practice of Knowledge Discovery in Databases}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jinghe~Zhang}{Jinghe~Zhang}{2015}]%
+        {zhang_mseq_2015}
+{Yu~Huang Hao Wu Kevin Leach Laura E.~Barnes Jinghe~Zhang, Haoyi~Xiong}. 2015.
+\newblock \showarticletitle{{MSEQ}: Early Detection of Anxiety and Depression
+  via Temporal Orders of Diagnoses in Electronic Health Data}. In {\em Big
+  {Data} (Workshop), 2015 {International} {Conference} on}. IEEE.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kalina, Seidl, Zv{\'a}ra, Gr{\"u}nfeldov{\'a},
+  Slov{\'a}k, and Zv{\'a}rov{\'a}}{Kalina et~al\mbox{.}}{2013}]%
+        {kalina2013selecting}
+{Jan Kalina}, {Libor Seidl}, {Karel Zv{\'a}ra}, {Hana Gr{\"u}nfeldov{\'a}},
+  {Dalibor Slov{\'a}k}, {and} {Jana Zv{\'a}rov{\'a}}. 2013.
+\newblock \showarticletitle{Selecting relevant information for medical decision
+  support with application to cardiology}.
+\newblock {\em European Journal for Biomedical Informatics\/} {9}, 1 (2013),
+  2--6.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Karlsson and Bostrom}{Karlsson and
+  Bostrom}{2014}]%
+        {karlsson2014handling}
+{Isak Karlsson} {and} {Henrik Bostrom}. 2014.
+\newblock \showarticletitle{Handling Sparsity with Random Forests When
+  Predicting Adverse Drug Events from Electronic Health Records}. In {\em
+  Healthcare Informatics (ICHI), 2014 IEEE International Conference on}. IEEE,
+  17--22.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kendler, Hettema, Butera, Gardner, and
+  Prescott}{Kendler et~al\mbox{.}}{2003}]%
+        {kendler2003life}
+{Kenneth~S Kendler}, {John~M Hettema}, {Frank Butera}, {Charles~O Gardner},
+  {and} {Carol~A Prescott}. 2003.
+\newblock \showarticletitle{Life event dimensions of loss, humiliation,
+  entrapment, and danger in the prediction of onsets of major depression and
+  generalized anxiety}.
+\newblock {\em Archives of general psychiatry\/} {60}, 8 (2003), 789--796.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kenney~Ng}{Kenney~Ng}{2015}]%
+        {personalized2015}
+{Jianying Hu Fei~Wang Kenney~Ng, Jimeng~Sun}. 2015.
+\newblock \showarticletitle{Personalized Predictive Modeling and Risk Factor
+  Identification using Patient Similarity}.
+\newblock {\em AMIA Summit on Clinical Research Informatics (CRI)\/} (2015).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kroenke and Spitzer}{Kroenke and
+  Spitzer}{2002}]%
+        {kroenke2002phq}
+{Kurt Kroenke} {and} {Robert~L Spitzer}. 2002.
+\newblock \showarticletitle{The {PHQ-9}: a new depression diagnostic and
+  severity measure}.
+\newblock {\em Psychiatr Ann\/} {32}, 9 (2002), 1--7.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kumari and Godara}{Kumari and Godara}{2011}]%
+        {kumari2011comparative}
+{Milan Kumari} {and} {Sunila Godara}. 2011.
+\newblock \showarticletitle{Comparative study of data mining classification
+  methods in cardiovascular disease prediction 1}.
+\newblock  (2011).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lindstrom and Tuomilehto}{Lindstrom and
+  Tuomilehto}{2003}]%
+        {Lindstrom01032003}
+{Jaana Lindstrom} {and} {Jaakko Tuomilehto}. 2003.
+\newblock \showarticletitle{The Diabetes Risk Score: A practical tool to
+  predict type 2 diabetes risk}.
+\newblock {\em Diabetes Care\/} {26}, 3 (2003), 725--731.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Liu, Wang, Hu, and Xiong}{Liu
+  et~al\mbox{.}}{2015}]%
+        {liu_temporal_2015}
+{Chuanren Liu}, {Fei Wang}, {Jianying Hu}, {and} {Hui Xiong}. 2015.
+\newblock \showarticletitle{Temporal {Phenotyping} from {Longitudinal}
+  {Electronic} {Health} {Records}: {A} {Graph} {Based} {Framework}}. In {\em
+  Proceedings of the 21th {ACM} {SIGKDD} {International} {Conference} on
+  {Knowledge} {Discovery} and {Data} {Mining}} {\em ({KDD} '15)}. ACM, New
+  York, NY, USA, 705--714.
+\newblock
+\showISBNx{978-1-4503-3664-2}
+\showDOI{%
+\url{http://dx.doi.org/10.1145/2783258.2783352}}
+
+
+\bibitem[\protect\citeauthoryear{Lu, Plataniotis, and Venetsanopoulos}{Lu
+  et~al\mbox{.}}{2003}]%
+        {lu2003face}
+{Juwei Lu}, {Kostantinos~N Plataniotis}, {and} {Anastasios~N Venetsanopoulos}.
+  2003.
+\newblock \showarticletitle{Face recognition using LDA-based algorithms}.
+\newblock {\em Neural Networks, IEEE Transactions on\/} {14}, 1 (2003),
+  195--200.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Maroco, Silva, Rodrigues, Guerreiro, Santana,
+  and Mendonça}{Maroco et~al\mbox{.}}{2011}]%
+        {maroco_data_2011}
+{João Maroco}, {Dina Silva}, {Ana Rodrigues}, {Manuela Guerreiro}, {Isabel
+  Santana}, {and} {Alexandre~de Mendonça}. 2011.
+\newblock \showarticletitle{Data mining methods in the prediction of
+  {Dementia}: {A} real-data comparison of the accuracy, sensitivity and
+  specificity of linear discriminant analysis, logistic regression, neural
+  networks, support vector machines, classification trees and random forests}.
+\newblock {\em BMC Research Notes\/} {4}, 1 (Aug. 2011), 299.
+\newblock
+\showISSN{1756-0500}
+\showDOI{%
+\url{http://dx.doi.org/10.1186/1756-0500-4-299}}
+
+
+\bibitem[\protect\citeauthoryear{McLachlan}{McLachlan}{2004}]%
+        {mclachlan2004discriminant}
+{Geoffrey McLachlan}. 2004.
+\newblock {\em Discriminant analysis and statistical pattern recognition}. Vol.
+  544.
+\newblock John Wiley \& Sons.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nesterov}{Nesterov}{2004}]%
+        {nesterov2004introductory}
+{Yurii Nesterov}. 2004.
+\newblock {\em Introductory lectures on convex optimization}. Vol.~87.
+\newblock Springer Science \& Business Media.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ng, Sun, Hu, and Wang}{Ng
+  et~al\mbox{.}}{2015}]%
+        {ng_personalized_2015}
+{Kenney Ng}, {Jimeng Sun}, {Jianying Hu}, {and} {Fei Wang}. 2015.
+\newblock \showarticletitle{Personalized {Predictive} {Modeling} and {Risk}
+  {Factor} {Identification} using {Patient} {Similarity}}.
+\newblock {\em AMIA Summits on Translational Science Proceedings\/}  {2015}
+  (March 2015), 132--136.
+\newblock
+\showISSN{2153-4063}
+\showURL{%
+\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4525240/}}
+
+
+\bibitem[\protect\citeauthoryear{Nobles, Vilankar, Wu, and Barnes}{Nobles
+  et~al\mbox{.}}{2015}]%
+        {alicia2015evaluating}
+{Alicia Nobles}, {Ketki Vilankar}, {Hao Wu}, {and} {Laura Barnes}. 2015.
+\newblock \showarticletitle{Evaluation of Data Quality of Multisite Electronic
+  Health Record Data for Secondary Analysis}. In {\em Big {Data} (Workshop),
+  2015 {International} {Conference} on}. IEEE.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Palaniappan and Awang}{Palaniappan and
+  Awang}{2008}]%
+        {palaniappan2008intelligent}
+{Sellappan Palaniappan} {and} {Rafiah Awang}. 2008.
+\newblock \showarticletitle{Intelligent heart disease prediction system using
+  data mining techniques}. In {\em Computer Systems and Applications, 2008.
+  AICCSA 2008. IEEE/ACS International Conference on}. IEEE, 108--115.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Perer and Wang}{Perer and Wang}{2014}]%
+        {perer_frequence:_2014}
+{Adam Perer} {and} {Fei Wang}. 2014.
+\newblock \showarticletitle{Frequence: interactive mining and visualization of
+  temporal frequent event sequences}. In {\em Proceedings of the 19th
+  international conference on {Intelligent} {User} {Interfaces}}. ACM,
+  153--162.
+\newblock
+\showURL{%
+\url{http://dl.acm.org/citation.cfm?id=2557508}}
+
+
+\bibitem[\protect\citeauthoryear{Perer, Wang, and Hu}{Perer
+  et~al\mbox{.}}{2015}]%
+        {perer_mining_2015}
+{Adam Perer}, {Fei Wang}, {and} {Jianying Hu}. 2015.
+\newblock \showarticletitle{Mining and exploring care pathways from electronic
+  medical records with visual analytics}.
+\newblock {\em Journal of Biomedical Informatics\/}  {56} (Aug. 2015),
+  369--378.
+\newblock
+\showISSN{1532-0464}
+\showDOI{%
+\url{http://dx.doi.org/10.1016/j.jbi.2015.06.020}}
+
+
+\bibitem[\protect\citeauthoryear{Pittman, Huang, Dressman, Horng, Cheng, Tsou,
+  Chen, Bild, Iversen, Huang, et~al\mbox{.}}{Pittman et~al\mbox{.}}{2004}]%
+        {pittman2004integrated}
+{Jennifer Pittman}, {Erich Huang}, {Holly Dressman}, {Cheng-Fang Horng},
+  {Skye~H Cheng}, {Mei-Hua Tsou}, {Chii-Ming Chen}, {Andrea Bild}, {Edwin~S
+  Iversen}, {Andrew~T Huang}, {and} {others}. 2004.
+\newblock \showarticletitle{Integrated modeling of clinical and gene expression
+  information for personalized prediction of disease outcomes}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America\/} {101}, 22 (2004), 8431--8436.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Qiao, Zhou, and Huang}{Qiao
+  et~al\mbox{.}}{2008}]%
+        {qiao2008effective}
+{Zhihua Qiao}, {Lan Zhou}, {and} {Jianhua~Z Huang}. 2008.
+\newblock \showarticletitle{Effective linear discriminant analysis for high
+  dimensional, low sample size data}. In {\em Proceeding of the World Congress
+  on Engineering}, Vol.~2. Citeseer, 2--4.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Shao, Wang, Deng, Wang, et~al\mbox{.}}{Shao
+  et~al\mbox{.}}{2011}]%
+        {shao2011sparse}
+{Jun Shao}, {Yazhen Wang}, {Xinwei Deng}, {Sijian Wang}, {and} {others}. 2011.
+\newblock \showarticletitle{Sparse linear discriminant analysis by thresholding
+  for high dimensional data}.
+\newblock {\em The Annals of statistics\/} {39}, 2 (2011), 1241--1265.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Siontis, Tzoulaki, Siontis, and
+  Ioannidis}{Siontis et~al\mbox{.}}{2012}]%
+        {riskprediction}
+{George C~M Siontis}, {Ioanna Tzoulaki}, {Konstantinos~C Siontis}, {and} {John
+  P~A Ioannidis}. 2012.
+\newblock \showarticletitle{Comparisons of established risk prediction models
+  for cardiovascular disease: systematic review}.
+\newblock {\em BMJ\/}  {344} (2012).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Soni, Ansari, Sharma, and Soni}{Soni
+  et~al\mbox{.}}{2011}]%
+        {soni2011predictive}
+{Jyoti Soni}, {Ujma Ansari}, {Dipesh Sharma}, {and} {Sunita Soni}. 2011.
+\newblock \showarticletitle{Predictive data mining for medical diagnosis: An
+  overview of heart disease prediction}.
+\newblock {\em International Journal of Computer Applications\/} {17}, 8
+  (2011), 43--48.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Sun, Wang, Hu, and Edabollahi}{Sun
+  et~al\mbox{.}}{2012}]%
+        {sun2012supervised}
+{Jimeng Sun}, {Fei Wang}, {Jianying Hu}, {and} {Shahram Edabollahi}. 2012.
+\newblock \showarticletitle{Supervised patient similarity measure of
+  heterogeneous patient records}.
+\newblock {\em ACM SIGKDD Explorations Newsletter\/} {14}, 1 (2012), 16--24.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Tabachnick, Fidell, et~al\mbox{.}}{Tabachnick
+  et~al\mbox{.}}{2001}]%
+        {tabachnick2001using}
+{Barbara~G Tabachnick}, {Linda~S Fidell}, {and} {others}. 2001.
+\newblock \showarticletitle{Using multivariate statistics}.
+\newblock  (2001).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Thompson, Bazile, and Akbar}{Thompson
+  et~al\mbox{.}}{2004}]%
+        {thompson2004african}
+{Vetta L~Sanders Thompson}, {Anita Bazile}, {and} {Maysa Akbar}. 2004.
+\newblock \showarticletitle{African Americans' perceptions of psychotherapy and
+  psychotherapists.}
+\newblock {\em Professional psychology: Research and practice\/} {35}, 1
+  (2004), 19.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Turner and Keller}{Turner and Keller}{2015}]%
+        {turner_college_2015}
+{James~C. Turner} {and} {Adrienne Keller}. 2015.
+\newblock \showarticletitle{College {Health} {Surveillance} {Network}:
+  {Epidemiology} and {Health} {Care} {Utilization} of {College} {Students} at
+  {U}.{S}. 4-{Year} {Universities}}.
+\newblock {\em Journal of American college health: J of ACH\/} (June 2015), 0.
+\newblock
+\showISSN{1940-3208}
+\showDOI{%
+\url{http://dx.doi.org/10.1080/07448481.2015.1055567}}
+
+
+\bibitem[\protect\citeauthoryear{Von~Neumann}{Von~Neumann}{1951}]%
+        {von1951functional}
+{John Von~Neumann}. 1951.
+\newblock {\em Functional operators: The geometry of orthogonal spaces}.
+\newblock Princeton University Press.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Wang, Lee, Hu, Sun, and Ebadollahi}{Wang
+  et~al\mbox{.}}{2012a}]%
+        {wang_towards_2012}
+{Fei Wang}, {Noah Lee}, {Jianying Hu}, {Jimeng Sun}, {and} {Shahram
+  Ebadollahi}. 2012a.
+\newblock \showarticletitle{Towards heterogeneous temporal clinical event
+  pattern discovery: a convolutional approach}. In {\em Proceedings of the 18th
+  {ACM} {SIGKDD} international conference on {Knowledge} discovery and data
+  mining}. ACM, 453--461.
+\newblock
+\showURL{%
+\url{http://dl.acm.org/citation.cfm?id=2339605}}
+
+
+\bibitem[\protect\citeauthoryear{Wang, Lee, Hu, Sun, Ebadollahi, and
+  Laine}{Wang et~al\mbox{.}}{2012b}]%
+        {wang_framework_2012}
+{Fei Wang}, {Noah Lee}, {Jianying Hu}, {Jimeng Sun}, {Shahram Ebadollahi},
+  {and} {A. Laine}. 2012b.
+\newblock \showarticletitle{A {Framework} for {Mining} {Signatures} from
+  {Event} {Sequences} and {Its} {Applications} in {Healthcare} {Data}}.
+\newblock  (2012).
+\newblock
+\showURL{%
+\url{http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6200289}}
+
+
+\bibitem[\protect\citeauthoryear{Wang and Sun}{Wang and Sun}{2015}]%
+        {7091853}
+{Fei Wang} {and} {Jimeng Sun}. 2015.
+\newblock \showarticletitle{PSF: A Unified Patient Similarity Evaluation
+  Framework Through Metric Learning With Weak Supervision}.
+\newblock {\em Biomedical and Health Informatics, IEEE Journal of\/} {19}, 3
+  (May 2015), 1053--1060.
+\newblock
+\showISSN{2168-2194}
+\showDOI{%
+\url{http://dx.doi.org/10.1109/JBHI.2015.2425365}}
+
+
+\bibitem[\protect\citeauthoryear{Wang, Zhang, Wang, and Hu}{Wang
+  et~al\mbox{.}}{2014}]%
+        {wang2014clinical}
+{Fei Wang}, {Ping Zhang}, {Xiang Wang}, {and} {Jianying Hu}. 2014.
+\newblock \showarticletitle{Clinical Risk Prediction by Exploring High-Order
+  Feature Correlations}. In {\em AMIA Annual Symposium Proceedings}, Vol. 2014.
+  American Medical Informatics Association, 1170.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Wu}{Wu}{2009}]%
+        {wu2009karush}
+{Hsien-Chung Wu}. 2009.
+\newblock \showarticletitle{The Karush--Kuhn--Tucker optimality conditions in
+  multiobjective programming problems with interval-valued objective
+  functions}.
+\newblock {\em European Journal of Operational Research\/} {196}, 1 (2009),
+  49--60.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Xue, Ma, and Zou}{Xue et~al\mbox{.}}{2012}]%
+        {xue2012positive}
+{Lingzhou Xue}, {Shiqian Ma}, {and} {Hui Zou}. 2012.
+\newblock \showarticletitle{Positive-definite ℓ1-penalized estimation of
+  large covariance matrices}.
+\newblock {\it J. Amer. Statist. Assoc.} {107}, 500 (2012), 1480--1491.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ye, Janardan, Park, and Park}{Ye
+  et~al\mbox{.}}{2004}]%
+        {ye2004optimization}
+{Jieping Ye}, {Ravi Janardan}, {Cheong~Hee Park}, {and} {Haesun Park}. 2004.
+\newblock \showarticletitle{An optimization criterion for generalized
+  discriminant analysis on undersampled problems}.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on\/} {26}, 8 (2004), 982--994.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Yoo, Alafaireet, Marinov, Pena-Hernandez,
+  Gopidi, Chang, and Hua}{Yoo et~al\mbox{.}}{2011}]%
+        {yoo_data_2011}
+{Illhoi Yoo}, {Patricia Alafaireet}, {Miroslav Marinov}, {Keila
+  Pena-Hernandez}, {Rajitha Gopidi}, {Jia-Fu Chang}, {and} {Lei Hua}. 2011.
+\newblock \showarticletitle{Data {Mining} in {Healthcare} and {Biomedicine}:
+  {A} {Survey} of the {Literature}}.
+\newblock {\em Journal of Medical Systems\/} {36}, 4 (May 2011), 2431--2448.
+\newblock
+\showISSN{0148-5598, 1573-689X}
+\showDOI{%
+\url{http://dx.doi.org/10.1007/s10916-011-9710-5}}
+
+
+\bibitem[\protect\citeauthoryear{Zheng, Zhang, Yoon, Lam, Khasawneh, and
+  Poranki}{Zheng et~al\mbox{.}}{2015}]%
+        {zheng_predictive_2015}
+{Bichen Zheng}, {Jinghe Zhang}, {Sang~Won Yoon}, {Sarah~S. Lam}, {Mohammad
+  Khasawneh}, {and} {Srikanth Poranki}. 2015.
+\newblock \showarticletitle{Predictive modeling of hospital readmissions using
+  metaheuristics and data mining}.
+\newblock {\em Expert Systems with Applications\/} {42}, 20 (Nov. 2015),
+  7110--7120.
+\newblock
+\showISSN{0957-4174}
+\showDOI{%
+\url{http://dx.doi.org/10.1016/j.eswa.2015.04.066}}
+
+
+\bibitem[\protect\citeauthoryear{Ziegel}{Ziegel}{2003}]%
+        {ziegel2003modern}
+{Eric~R Ziegel}. 2003.
+\newblock \showarticletitle{Modern Applied Statistics With S}.
+\newblock {\em Technometrics\/} {45}, 1 (2003), 111.
+\newblock
+
+
+\end{thebibliography}

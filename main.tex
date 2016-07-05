@@ -1,0 +1,113 @@
+\documentclass[prodmode,acmtist]{acmsmall}
+\pagenumbering{arabic}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+%\usepackage{graphix}
+\usepackage{lscape}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphicx} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+\usepackage[lofdepth,lotdepth]{subfig}
+%\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\usepackage{bbm}
+\usepackage{pseudocode}
+\usepackage{color}
+%\usepackage{cite}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
+%\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[linesnumbered,boxed,ruled]{algorithm2e}
+
+%\newcommand{\modf3}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\TheName}{\mbox{\emph{Daehr}}}
+\newcommand{\modif}[1]{{#1}}
+\newcommand{\appd}[1]{\textcolor{red}{#1}}
+
+
+\begin{document}
+\title{\TheName{}: a Discriminant Analysis Framework for Electronic Health Record Data and an Application to Early Detection of Mental Health Disorders}
+
+\author{
+HAOYI XIONG
+\affil{University of Virginia}
+JINGHE ZHANG
+\affil{University of Virginia}
+YU HUANG
+\affil{University of Virginia}
+KEVIN LEACH
+\affil{University of Virginia}
+LAURA E. BARNES
+\affil{University of Virginia}
+}
+
+%\IEEEcompsoctitleabstractindextext{
+\begin{abstract}
+Electronic Health Records (EHR) in health care settings provide a rich source of medical data which present a unique opportunity to characterize disease patterns and risk of imminent disease. 
+%
+%%and  containing a massive number of patient diagnosis records have been used to predict patients' future or potential diseases according to their past diagnoses.
+%
+While many data mining tools have been adopted for EHR-based disease early detection, Linear Discriminant Analysis (LDA) is one of the most commonly used statistical methods.
+However, it is difficult to train an accurate LDA model for early disease diagnosis when too few patients are known to have the target disease and the EHR data are heterogenous with  significant noise.  In such cases, the covariance matrices used in LDA are usually singular and estimated with a large variance.
+ 
+This paper presents \TheName{}, an extension of the LDA framework using Electronic Health Record data to address these issues.
+Beyond existing LDA analyzers, we propose \TheName{} to 1) eliminate the data noise caused by the manual encoding of EHR data, and 2) lower the decision risk of LDA model with finely-estimated parameters when only a few patients' EHR are given for training.
+To achieve these two goals, we designed an iterative algorithm to improve the covariance matrix estimation with embedded data-noise/decision-risk reduction for LDA.
+We evaluated \TheName{} extensively using a large-scale real-world EHR dataset, CHSN.
+Specifically, our experiments compared the performance of LDA to three baselines (i.e., LDA and its derivatives) in terms of identifying college students at high risk for mental health disorders from 23 US universities.
+Experimental results show \TheName{} significantly outperforms the three baselines by achieving 1.4\%--19.4\% higher accuracy, and a 7.5\%--43.5\% higher F1-score.
+
+
+\end{abstract}
+
+\category{J.3}{Applied computing}{Health care information systems}
+
+%%I debate whether you can claime the human factors here
+\terms{Data Mining, Algorithms, Performance}
+
+%temporal order isnt exploited here so should probably remove it
+\keywords{predictive models, early detection, anxiety/depression, temporal order, electronic health data}
+
+
+
+%\begin{keywords}
+%predictive models, early detection, anxiety/depression, temporal order, electronic health data
+%\end{keywords}
+%}
+\maketitle
+%\IEEEpeerreviewmaketitle
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+\input{intro}
+\input{related-work}
+\input{method}
+\input{algo}
+\input{evaluation}
+\input{conclusion}
+
+%\input{acknowledgement}
+%\bibliographystyle{IEEEtran}
+\bibliographystyle{acmtrans}
+\bibliography{sigproc}
+%\input{appendix}
+
+\end{document}
+
+

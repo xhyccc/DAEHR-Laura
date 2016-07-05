@@ -1,0 +1,67 @@
+\begin{table}
+\begin{center}
+\caption{Computation Time Comparison (in Milliseconds, Training Samples: $250\times 2$), ``AB ''refers to AdaBoost}
+\label{tab:time-consuming}
+
+\begin{tabular}{*{7}{c}}
+\toprule
+	&LDA&\TheName\ &SVM&Logit. Reg. & AB-10 & AB-50\\
+	\midrule
+
+Training  &	249.1	&  11076.3  &  830.97  &  44.97  &  484.2 & 2631.0  \\
+\midrule
+
+Testing   &	0.098	&  0.098   &  0.001    &  0.002  &  0.016 & 0.077  \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table*}
+\begin{center}
+\caption{Correlation Matrix Comparison - Training Set Size =$50\times 2$.}
+		\label{tab:matrix-error}
+
+\begin{tabular}{*{5}{c}}
+\toprule
+ 
+Algorithm & $|\Sigma_+-\Sigma_{+l}|_1$ & $||\Sigma_+-\Sigma_{+l}||_F^2$ & $|\Sigma_--\Sigma_{-l}|_1$ & $||\Sigma_--\Sigma_{-l}||_F^2$  \\
+
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+
+    LDA  &   94493.04 & 187413.61  &     94350.30 & 187278.89  \\
+ 
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+
+    DIAG  &    93596.18 & 186885.30  &     93599.03 & 186881.08   \\
+   % \midrule
+
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+
+Shrinkage-25 &   93766.30& 186912.14 &    93726.33 & 186901.50   \\
+Shrinkage-50 &    93999.36& 187009.13 &    93924.81 & 186974.58     \\
+Shrinkage-75 &    94243.82& 187176.29 &    94135.50 & 187100.38     \\
+    % \midrule
+ \cmidrule(lr){1-1}                        
+ \cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+
+\TheName   &    25773.97&	49477.79&    27062.96	& 50418.86    \\
+ %    & $.005*.5^{3}$ &     25772.45&	49477.45&   27072.91	&50422.71  \\     
+ %    & $.005*.5^{4}$ &    25758.24&	49473.36 &   27064.53 &	50418.99  \\
+ %    & $.005*.5^{5}$ &    25757.42&	49473.26&  27070.66&	50422.08     \\
+ %    & $.005*.5^{6}$ &    25769.25&	49476.02 &   27068.80& 	50420.71 \\
+ 
+     \bottomrule
+ 
+\end{tabular}
+\end{center}
+\end{table*}

@@ -1,0 +1,83 @@
+\documentclass[journal,compsoc]{IEEEtran}
+\pagenumbering{arabic}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+%\usepackage{graphix}
+\usepackage{lscape}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphicx} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+\usepackage[lofdepth,lotdepth]{subfig}
+%\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\usepackage{bbm}
+\usepackage{pseudocode}
+\usepackage{color}
+\usepackage{cite}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage[noend]{algpseudocode}
+%\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[linesnumbered,boxed,ruled]{algorithm2e}
+
+%\newcommand{\modf3}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\TheName}{\mbox{\emph{Daehr}}}
+\newcommand{\modif}[1]{\textcolor{blue}{#1}}
+
+
+\begin{document}
+\title{\TheName{}: a Linear Discriminant Analysis Framework for Electronic Health Record Data \\
+ {\LARGE with its Application to Early Detection of Mental Health Disorders}}
+
+\author{\IEEEauthorblockN{Haoyi Xiong,~Jinghe Zhang,~Yu Huang,~Kevin Leach, and ~Laura E. Barnes}~\thanks{Authors are all with Department of Systems and Information Engineering, University of Virginia, VA. Email:\{hx6d, xxx, xxx, xxx\}@virginia.edu}
+}
+
+\IEEEcompsoctitleabstractindextext{ \begin{abstract} Electronic Health Records (EHR) containing a massive number of patients' diagnosis records have been used to predict future or potential diseases according to their past diagnoses.
+While a number of data mining tools have been adopted for EHR-based early disease detection, Linear Discriminant Analysis (LDA) is one of the most commonly used statistical methods.
+However, it is difficult to train an accurate LDA model that detects specific diseases when there are too few known patients with the targeted diseases and the EHR data are coded manually with noise, because the covariance matrices used in LDA are usually singular and estimated with large variance.
+To address these issues, this paper presents \TheName{}, an extended LDA framework using Electronic Health Records.
+Beyond the existing LDA analyzers, \TheName{} is proposed to 1) eliminate the data noise caused by the manual encoding of EHR data, and 2) lower the variance of the LDA model even when only a few patients' EHR data are given for training.
+To achieve the two goals, we designed an iterative algorithm to improve the covariance matrix estimation with embedded data noise/variance reduction for LDA.
+We evaluated \TheName{} extensively using a large-scale real-world EHR dataset, the College Health Surveillance Network (CHSN).
+Specifically, our experiments compare the performance of LDA to three baselines (i.e., LDA and its derivatives) in terms of identifying high risk college students for mental health disorders from 23 US universities.
+Experimental results show that \TheName{} significantly outperformed three baselines by achieving 3\%--10\% higher prediction accuracy, and a 3\% --14\% higher F1-score.
+
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+predictive models, early detection, anxiety/depression, temporal order, electronic health data
+\end{IEEEkeywords}
+}
+\maketitle
+\IEEEpeerreviewmaketitle
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\input{intro}
+\input{related-work}
+\input{method}
+\input{algo}
+\input{evaluation}
+\input{conclusion}
+%\input{acknowledgement}
+\bibliographystyle{IEEEtran}
+\bibliography{sigproc}
+\end{document}
+
+

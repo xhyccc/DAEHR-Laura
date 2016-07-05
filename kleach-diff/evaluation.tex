@@ -1,0 +1,167 @@
+\section{Evaluation}\label{sec:5}
+% why study mental health disorders?
+In this section, we introduce the experimental design of our evaluation.
+Then, we present the experimental results, including the performance comparison between the \TheName{} framework and original LDA baselines.
+Additionally, we present performance comparisons between \TheName{} and other predictive models. 
+Finally, we compare the time consumed by \TheName{} with other models.
+
+\subsection{Experimental Design}
+We first present the datasets used for our evaluation, then introduce the targeted diseases for the early detection.  We also specify the settings of early detection.
+
+\textbf{Dataset for Evaluation --- } In this study, to evaluate \TheName{}, we plan use the de-identified EHR data from the College Health Surveillance Network (CHSN), which contains over 1 million patients and 6 million visits from 31 student health centers across the United States~\cite{turner_college_2015}. 
+In the experiments, we use the EHR data from 10 participating schools. 
+The available information includes ICD-9 diagnostic codes, CPT procedural codes, and limited demographic information. There are over 200,000 enrolled students in those 10 schools representing all geographic regions of the US. The demography of enrolled students (sex, race/ethnicity, age, undergraduate/graduate status) closely matched the demography for the population of US universities.
+
+% KJL I can see a reviewer being upset with the criteria for "other related disorders".
+\textbf{Targeted Disease for Early Detection --- } Among all diseases recorded in CHSN, we choose mental health disorders, including \emph{anxiety disorders, mood disorders, depression disorders, and other related disorders}, as the targeted disease for early detection. Specifically, we plan to evaluate \TheName{} using the early detection of mental health disorders in \emph{college students}, considering following issues:
+\begin{enumerate}
+\item  \emph{Emergence of early detection of mental health disorders --- } Mental health disorders have become a severe problem in the United States and many other countries that 18.6\% adults have at least one mental disorder. 
+According to the Spring 2014 American College Health Association's National College Health Assessment report, approximately half of the college students have had the feeling of hopeless and overwhelming anxiety~\cite{ACHA2014}. 
+
+\item  \emph{Difficulty recognizing mental health disorders in early stages --- } Mental health disorders are frequently unrecognized  in primary care. 
+Untimely treatment results in emotional, physical, economic, and social burdens to patients and others. 
+
+\item \emph{Limitations of common approaches for early detection of mental health disorders --- } Questionnaires are commonly used to detect mental health disorders. 
+    Usually, specific questionnaires, interviews, or standard measurements are designed by researchers to collect patients' behavioral information targeting a particular psychiatric disorder. 
+    In particular, psychological screening, PHQ-9, is used to evaluate a patient's risk of mental health disorders~\cite{kroenke2002phq}. However, these approaches are not generally applicable in primary care thus cannot detect mental disorders at an early stage. 
+
+\end{enumerate}
+%
+We are motivated to use EHR data for the early detection of mental health disorders, considering the accessibility and information contained in EHR data. 
+
+\textbf{Early Detection Settings --- } From the CHSN datasets, we select 21,097 patients with anxiety/depression in the target group and 327,198 patients without any mental health disorder in the control group. 
+We represent each patient using his/her diagnosis-frequency vector based on the clustered codeset, where four clustered codes (i.e., xxx, xxx, xxx, xxx) are considered to represent the diagnoses of mental health disorders. 
+Specifically, if a patient has any of these four codes in his/her EHR, we say that he/she has been diagnosed with mental health disorders as ground truth.
+Note that in our research, we do not intend to predict these four types of mental disorders separately, as these four disorders are usually correlated and heavily overlapped in clinical practices.
+% KJL might want a citation for that last sentence
+
+\input{tab-comp}
+
+
+\subsection{Comparison to LDA Baselines}\label{sec:baselines}
+In order to understand the performance improvement of \TheName{} beyond classic LDA, we first propose three LDA baseline approaches that we compare against \TheName{}:
+\begin{itemize}
+\item \textbf{LDA} --- This algorithm is based on the common implementation of generalized linear discriminant analysis using sample covariance matrix estimation and Equation~\ref{eq:glda}. This algorithm uses the pseudo-inverse~\cite{ye2004optimization} to replace the matrix inverse in Equation~\ref{eq:glda} when the sample covariance matrix is singular.
+
+\item \textbf{Shrinkage --- } This algorithm is based on the aforementioned \textbf{LDA} implementation (using pseudo-inverse). However, rather than using the sample covariance matrix, this algorithm adopts the sparse estimation of the covariance matrix $\Sigma^*=\beta*\Sigma+(1-\beta) * diag(\Sigma)$, where $\Sigma$ refers to the given sample covariance matrix, $diag(\Sigma)$ refers to a $p\times p$ matrix preserving the diagonal elements of $\Sigma$ only, and $\beta\geq 0$ is a tuning parameter. 
+    The Shrinkage algorithm can be considered as a heuristic approach to the optimization problem addressed in Equation~\ref{eq:problem}.
+
+\item \textbf{DIAG --- } This algorithm is based on the Shrinkage approach with $\beta=0.0$, which means the sparse estimation of the covariance matrix $\Sigma^*=diag(\Sigma)$ used in LDA only includes the diagonal information of the sample covariance matrix.
+
+\end{itemize}
+Note that the implementation of \TheName{} as well as above baselines are derived from the Java implementation of LDA released by Psychometrica\footnote{Java-Implementation of the Linear Discriminant Analysis, Institute for Psychological Diagnosis, http://www.psychometrica.de/lda.html}.
+
+With the four algorithms, we perform experiments with following settings:
+\begin{itemize}
+\item \textbf{Training Samples --- } we randomly select 50, 100, 150, 200, 250, 300, 350, and 400 patients from the target group as the positive training samples, then randomly select the same number of patients from the control group as negative training samples; here, the training set of the two classes of patients is balanced.
+\item \textbf{Testing Samples --- } we randomly select 200 and 1000 unselected patients (not included in the training set) from the target group as well as the same number of unselected patients from the control group as the testing set; here, the testing set is also balanced.
+\end{itemize}
+%
+For each setting, we execute the four algorithms and repeat 30 times. 
+In particular, we are interested in measuring following metrics: 
+\begin{equation}
+\begin{aligned}
+&Accuracy=\frac{TP+TN}{TP+TN+FP+FN},\\
+&\text{F1-score}=\frac{2*TP}{2*TP+FP+FN}
+\end{aligned}
+\end{equation}
+where $TP$, $TN$, $FP$, and $FN$ refer to the true-positive, true-negative, false-positive, and false-negative classification samples in early detection of mental health disorders respectively. 
+Specifically, the Accuracy metric characterizes the proportion of patients who are accurately classified in the early detection of mental disorders.  The F1-Score measures both correctness and completeness of the early detection. 
+
+Table~\ref{tab:table11} and Table~\ref{tab:table12} present part of the comparison results. 
+The results show that under all settings, \TheName{} outperforms the three baseline algorithms in terms of overall accuracy and F1-score. 
+%LDA:
+% accuracy for testSample200: 18.1%, 8.1%, 3.6%, 1.4%, accuracy for testSample1000: 18.3%, 5.8%, 3.6%, 1.7%
+% F1-score for testSample200:  29.3%, 16.8%, 11.2%, 7.6%, F1-score for testSample1000: 29.0%, 15.5%,  11.1%,  8.6%
+Compared to LDA, \TheName{} achieves 1.4\%--18.3\% higher accuracy   and 7.6\%--29.3\% higher F1-score. 
+Compared to Shrinkage and DIAG, \TheName{} achieves 
+ % DIAG: 
+ %accuracy for testSample200: 9.1%, 5.0%, 3.6%,2.6%, , accuracy for testSample1000: 9.7%, 5.0%, 4.1%, 2.1%
+ % F1-score for testSample200: 17.9%,12.6%,   12.1%, 9.4% , F1-score for testSample1000: 21.1%, 14.6%,12.2%, 8.8%
+ % Shrinkage:(这个太多了而且都差不多,我就算了0.25的..)
+%accuracy for testSample200: 8.9%, 4.9%, 3.4%, 2.1%, accuracy for testSample1000:9.6%, 4.1%, 3.6%, 1.5%
+ % F1-score for testSample200: 17.7%, 12.1%,   11.4%, 8.6% , F1-score for testSample1000: 20.3%, 13.5%, 11.1%, 7.9%
+1.5\%--9.7\% higher accuracy and 7.9\%--21.1\% higher F1-score. 
+ 
+Further, it is clear that decreasing the quantity of training samples results in a larger improvement in accuracy and F1-score. 
+In this case, we can conclude that \TheName{} significantly improves the accuracy and F1-score from the classic LDA, especially when the training sample size is small. 
+\TheName{} outperforms all other baselines derived from LDA in terms of accuracy and F1-score. 
+
+\input{tab-comp2}
+
+\subsection{Comparison to other predictive models}
+In order to understand the performance of \TheName{}, we compare it to other predictive models frequently used for early detection of diseases. 
+Specifically, we consider to use following algorithms for the comparison:
+\begin{itemize}
+\item \emph{Support Vector Machine (SVM)} ---  Inspired by~\cite{xxx}, we use a linear binary SVM classifier with fine-tuned parameters.
+\item \emph{Logistic Regression (Logit. Reg.)} --- Inspired by~\cite{xxx},  we use a Logistic Regression classifier.
+\item \emph{AdaBoost-10} and \emph{AdaBoost-50} --- To compare an ensemble of learning methods, we use AdaBoost to ensemble multiple Logistic Regression classifiers, where AdaBoost-10 refers to the AdaBoost classifier based on 10 Logistic Regression instances and AdaBoost-50 refers to the one with 50 Logistic Regression instances.
+\end{itemize}
+Combined with LDA and \TheName{} $(\tau=0.005*0.5^2)$, we evaluate these six algorithms using the experiment settings introduced in Section~\ref{sec:baselines}. 
+The comparison results are shown in Table~\ref{tab:table13_compressed}.\footnote{Please note that the results of LDA and \TheName{} in Table~\ref{tab:table13_compressed} are slightly different from those in Table~\ref{tab:table11} and Table~\ref{tab:table12}, since we conduct the two sets of experiments separately.}  
+% LDA compared to LR, SVM, AB :
+	%accuracy: 
+	%LogisticReg: 11.4%, -3.8%
+	%SVM: 11.4%, 3.3%
+	% AB-10: 16.7%, -1.6%
+	%AB-50: 14.9%, -0.9%
+
+	%F1-score: 
+	%LogisticReg: -5.1%, -21.8%
+	%SVM: 10.8%, 4.4%
+	% AB-10: 9.1%, -16.1%
+	%AB-50: 3.5%, - 14.2%
+	
+% Daehr compared to LDA, LR, SVM, AB:
+	%accuracy: 
+	%LDA:  19.4%, 7.0%,
+	%LogisticReg: 7.2%, 11.2%
+	%SVM: 7.2%, 3.6%
+	% AB-10: 2.3%, 8.7%
+	%AB-50: 3.9%, 8.1%
+
+	%F1-score:
+	%LDA:  26.6%, 12.2%
+	%LogisticReg: 33.4%, 43.5%
+	%SVM: 14.3%, 7.5%
+	% AB-10: 16.0%, 33.6%
+	%AB-50: 22.4%, 30.7%
+Compared to LDA, SVM, Logistic Regression and AdaBoost can achieve 11.4\%--16.7\% higher accuracy and 3.5\%--10.8\% higher F1-score (the only exception is the F1-score of Logistic Regression, which is 5\% lower than LDA) with a relatively small training set (Training Set = 50). 
+On a large training set (Training set = 250), SVM still attains better performance than LDA.
+The performance of LDA is nearly equal to Logistic Regression and AdaBoost in terms of accuracy, while achieving a better F1-score.
+Compared to SVM, Logistic Regression, and AdaBoost, \TheName{} can achieve 2.3\%--19.4\% higher accuracy and 7.5\%--43.5\% higher F1-score. 
+In this case, we can conclude that the classic LDA model cannot perform as well as many other predictive models such as SVM and AdaBoost. However, \TheName{} significantly outperforms all five baseline algorithms in all settings. 
+These results indicate that \TheName{} not only improves LDA, but that \TheName{} is also a leading predictive model for early detection of mental health disorders. 
+
+
+
+\subsection{Two Case Studies}
+In order to further understand the performance of \TheName{}, we present two case studies to show the time consumption of \TheName{}, then analyze the reason how \TheName{} can outperform LDA baselines.
+
+\textbf{Computational Time Analysis --- } We measure computational time consumption of the six algorithms in the experiments introduced in Section~\ref{sec:5}. We carried out the experiments using a laptop with an Intel Core i7-2630QM Quad-Core CPU and 8GB memory. All algorithms used in our experiments were implemented with the Java SE platform on a Java HotSpot(TM) 64-Bit Server VM.
+%
+%
+Table~\ref{tab:time-consuming} shows the computational time comparison between \TheName{} and the rest of methods, where the \emph{``Training''} row refers to the average time consumption of the six algorithms to train a model.  
+The average time consumption to classify each patient of the testing set is shown in the \emph{``Testing''} row. 
+Among these six algorithms, \TheName{} takes the longest time to train---however, the average time consumption to train a model with $250\times 2=500$ samples is less than 12 seconds, which is acceptable. 
+On the other hand, the average time consumption to classify a patient using \TheName{} is similar to LDA, as these two algorithms are equivalent in terms of prediction. 
+In any case, the time consumption of all these six algorithms to classify patients is quite tolerable (i.e., thousands patients per second). 
+We conclude that all of the algorithms described here, including \TheName{}, are computationally efficient, in terms of model training and early detection of diseases.
+
+\input{tab-comp3}
+
+
+\textbf{Covariance Matrix Estimation Analysis --- } We assume \TheName{} improves LDA the model because the sparse covariance matrix used in \TheName{} is more ``accurate'' than the sample covariance matrix used in LDA when the training sample size is limited. 
+In order to verify our hypothesis, we (1) gather the EHR data of all 21,097 patients with mental health disorders from CHSN (4 years EHR of 22 US Universities); (2) randomly select 10,000 patients from them to estimate covariance matrix $\Sigma_l$, (3) randomly select another 50 or 250 samples to train LDA and \TheName; and (4) further compare $\Sigma_l$ to the covariance matrices estimated in LDA and \TheName{} separately through measuring the error of matrices. 
+We repeat steps 1 through 4 for a total 30 trials so as to obtain the average error between the covariance matrices. 
+Table~\ref{tab:matrix-error} presents the average error between covariance matrices in $\ell^1$/Frobenius-norm. 
+%
+The results show that, compared to LDA, the covariance matrix estimated in \TheName{} using small samples is \textbf{more closed} to the covariance matrix estimated using large samples. 
+In this case, we conclude that \TheName{} can accurately estimate the covariance matrix for linear discriminant analysis, even when a small number of samples are given for model training. 
+
+Note that in our experiment, we simulate a training set with a relatively large sample size (i.e., 10,000). 
+However, for realistic predictive model training, such a large number of samples is usually not available.
+
+
+To conserve space, some results are not reported here. 
+Readers are encouraged to see the Appendix for additional details, including the evaluation results under more evaluation settings and more experimental insights.

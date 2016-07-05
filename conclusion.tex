@@ -1,0 +1,57 @@
+\section{Discussion}
+\label{sec:6}
+
+Due to space limitation, many important issues  have been excluded from this paper. 
+In this section, we discuss the following issues:
+\begin{itemize}
+\item \textbf{Leveraging both Diagnosis and Treatment Records. } In this paper, we use only diagnosis records as predictors for the early detection of diseases, while there exists some other papers~\cite{wang_towards_2012,liu_temporal_2015,gotz_methodology_2014} using both diagnosis and treatment records in EHR data. 
+It is reasonable to assume that using both diagnosis and treatment records can further improve the performance of \TheName{}. 
+On the other hand, EHR uses CPT codes to encode treatment records; these treatment records are frequently represented using treatment-frequency vectors for machine learning. 
+In this way, we can conclude that after certain extension, \TheName{} can predict further/potential diseases using both diagnosis and treatment records.
+
+%%You need to cite the clustered coding AHRQ system here... Jinghe had it in the last paper.
+\item \textbf{ICD-9/Clustered Codes and Other Data Representations. } In this paper, rather than using the raw ICD-9 codes, we adopt clustered codes to represent the diagnosis records.  
+The clustered code set maps 15000 ICD-9 codes to 295 codes, where each ICD-9 code corresponds to a single clustered code. 
+Further, we assume to use diagnosis-frequency vectors to represent the diagnosis records in EHR data. 
+Compared to ICD-9 codes, using the clustered codes reduces the dimensionality of diagnosis-frequency vectors. 
+Accordingly, such dimensionality reduction caan lead to information loss and is not necessarily optimal. 
+In our future work, we will study other data representations with \TheName{}.
+
+\item \textbf{Dimensionality Reduction and Other Approaches to HDLSS Problems. } In this paper, we have shown that the performance of traditional LDA might be bottlenecked due to High Dimension Low Sample Size (HDLSS) settings. 
+In this case, we proposed to use sparse covariance matrix estimation to lower the decision risk of LDA caused by HDLSS. 
+There are several alternative approaches to tackling HDLSS challenges such as feature extraction, representation learning, and kernel methods. 
+We believe \TheName{} can be further improved when combining with these approaches and further our contribution in \TheName{} is complementary to these studies.
+
+%\item \textbf{Covariance and Correlation Matrices. }
+
+\item \textbf{Bayes Optimality and Gaussian Distribution Assumptions. } \emph{Phase II} of \TheName{} is Bayes optimal, only when the diagnosis frequency data is normally distributed and follows the multivariate Gaussian distribution with the estimated parameters~\cite{hamsici2008bayes}. 
+However, the data extracted from real-world EHR might be non-Gaussian (e.g., Poisson-alike). Empirically, even though the assumptions of Gaussian distribution are often violated, LDA frequently achieves good performance in many classification tasks. 
+\TheName{} can be further improved when working with normally distributed data. 
+In future work, we will study the way to re-scale the frequency data with respect to the Gaussian distribution assumptions.
+
+\item \textbf{Sensitivity, Specificity and Other Performance Metrics. } In this paper, we present the comparison results of accuracy and F1-score between \TheName{} and other baselines. 
+Actually, many other performance metrics including sensitivity and specificity are frequently used in other early detection work. 
+To conserve space, our main paper presents only the accuracy and F1-score results. 
+Please refer the comparison of specificity and sensitivity in our Appendix. 
+Indeed, \TheName{} also achieves acceptable sensitivity and specificity. 
+On average, compared to classic LDA, \TheName{} achieves 15\%--25\% higher sensitivity while scarifying no more than 8\%--18\% specificity. 
+We conclude the overall performance improvement satisfies our expectations for early detection of mental health diseases for two reasons.  1). For early detection of mental health disorders, sensitivity is more important than specificity.  
+Compared to the cost of recognizing a patient with mental health disorders as negative (i.e., false-negative), the cost of false-positive is relatively low: 
+all patients predicted to be high-risk are suggested to use psychiatric services to receive further psychological diagnoses/intervention, while patients predicted to be low-risk might never go for consultation due to the low utilization rate of psychiatric services; 
+2) A lower specificity is expected with respect to the real positive/negative-patient distribution in ground truth. 
+When testing our algorithms, many negative testing samples are in fact patients with mental health disorders but have not yet been diagnosed. 
+Since mental health disorders such as anxiety and depression are not with significant/obvious symptoms or physiological changes, many patients with anxiety/depression cannot be recognized if they do not visit psychological departments for diagnoses.
+
+%\appd{More important, we must make sure that, compared to LDA, the new framework should provide better overall accuracy and F1-score for early detection of the diseases. While most existing predictive models consider overall accuracy as the primary performance metrics, F1-score, characterizing both correctness and completeness to identify high-risk patients from large testing samples, is yet another important metrics of our problem. An early detection framework with higher F1-score usually can identify more high-risk patients with fewer false alarms. Note that a predictive model with improved overall accuracy is not necessarily to have better F1-score. Thus, though it might be hard to achieve the two goals together, we need such a framework that can improve both accuracy and F1-score.}
+
+\end{itemize}
+
+\section{Conclusions}\label{sec:7}
+In this paper, we proposed \TheName{} --- a novel discriminant analysis framework for early detection of diseases, based on electronic health record data. 
+\TheName{} is designed to 1) reduce the effect of EHR data noise to LDA model training, and 2) lower the decision risk of LDA prediction through regularizing the covariance matrix estimation. 
+To improve the performance of LDA model by achieving these two goals, \TheName{} leverages the process of alternating projections with \emph{$\ell_1$-penalized sparse matrix estimation} and \emph{nearest positive-definite matrix approximation} to train the LDA model. 
+Theoretical analysis shows that \TheName{} can achieve quasi-optimal solution in terms of LDA-based early disease detection. 
+The experimental results using real-world EHR dataset CHSN showed \TheName{} significantly outperformed three baselines by achieving 1.4\%--19.4\%  higher prediction accuracy and 7.5\% -- 43.5\% higher F1-score. 
+Further experimental results and discussion details are addressed in Appendix.
+
+

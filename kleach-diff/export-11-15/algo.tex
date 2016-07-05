@@ -1,0 +1,50 @@
+\section{\TheName{} Core Algorithms}~\label{sec:4}
+In this section, we first introduce the two core algorithm used in \TheName{}, then analyzes the performance of the proposed algorithms.
+
+\subsection{$\ell_1$-penalized Sparse Matrix Estimation}
+Given the covariance matrix estimated in the previous iteration $\Sigma_{t}$, this algorithm estimates $\Sigma_{t+\frac{1}{2}}$ --- the $\ell_1$-penalized sparse estimation of $\Sigma_{t}$, using the Proximal Gradient Descent algorithm~\cite{nesterov2004introductory} with following objective function:   
+\begin{equation}
+\emph{min. }\frac{1}{2}||\Sigma_{t+\frac{1}{2}}-\Sigma_t||_F^2+\lambda |\Sigma_{t+\frac{1}{2}}|_1,
+\label{eq:sparse-imp}
+\end{equation}
+where $\lambda$ is a Lagrange multiplier~\cite{wu2009karush}. 
+When $\lambda\geq 0$, the Eq.~\ref{eq:sparse-imp} is a \emph{convex function with sparse input}, which can be optimally converged using proximal gradient descent~\cite{nesterov2004introductory}. 
+Note that $\Sigma_{t+\frac{1}{2}}$ is neither symmetric nor positive semidefinite.
+
+
+
+\subsection{Nearest Positive Semidefinite Matrix Approximation}
+Given the sparse matrix $\Sigma_{t+\frac{1}{2}}$, we intend to approximate its nearest positive-definite matrix $\Sigma_{t}$ (the output of the $t^{th}$ iteration) as Equation~\ref{eq:nearest-pd}. 
+%
+\begin{equation}
+\emph{min. } ||\Sigma_{t+1}-\Sigma_{t+\frac{1}{2}}||_F^2 \emph{ s.t. }\Sigma_{t+1}\in  {\bf }I^+
+\label{eq:nearest-pd}
+\end{equation}
+%
+To achieve the goal, we use the Nearest Correlation Matrix Approximation Algorithm~\cite{higham2002computing} shown in Algorithm~\ref{alg:apm}.
+Specifically, the projection $P_S(A)=\frac{1}{2}(V\lambda_+V^T+(V\lambda_+V^T)^T)$ and  $\lambda_+=\langle min\{\lambda_0,0\},min\{\lambda_1,0\}\dots  \rangle$, where $V,\lambda_i$ is the eigenvalue decomposition of $A$; the projection $P_U(A)=A'$, where $A'_{i,j}=1$ when $i=j,$ and $A'_{i,j}=A_{i,j}$ when $i\neq j$; the stopping criterion $\Delta''=max\{\frac{||H_{k+1}-H_k||_\infty}{||H_k||_\infty}, \frac{||H_{k+1}^*-H_k^*||_\infty}{||H_k^*||_\infty}, \frac{||H_{k+1}^*-H_k^*||_\infty}{||H_k||_\infty}\}$.
+ 
+The algorithm terminates upon predefined convergence (i.e., $\Delta'' < tol$) or when the maximal number of iterations is reached ($k=maxit''$).
+Note that when the algorithm stops at any $k> 0$, the output $\Sigma_{t+1}$ must be a positive semidefinite matrix.
+A detailed analysis is discussed in Section~\ref{sec:analysis}. 
+
+\begin{algorithm}
+\caption{Nearest Positive Definite Matrix Approximation}
+\label{alg:apm}
+\KwData{$\Sigma_{t+\frac{1}{2}}$ --- the $\ell_1$-penalized sparse estimation of $\Sigma_{t}$, $tol$ --- the tolerance of convergence}
+\KwResult{$\Sigma_{t+1}$ --- the nearest positive definite approximation to $\Sigma_{t+\frac{1}{2}}$}
+\Begin{
+ {\bf initialization:}\\
+  $H_0$ = $\frac{1}{2}(\Sigma_{t+\frac{1}{2}}+\Sigma_{t+\frac{1}{2}}^T)$, $k = 1$, $I_{mod_0} = 0$, $\Delta = 1$;\\
+\While{ $\Delta'' \geq tol, \text{ or } 0\leq k \leq maxit''$  }{
+ $R_{k+1} = H_{k} - I_{mod_{k}}$, \\%\% $I_{mod_{k-1}}$ is Dijkstra's correction;\\
+ $H_{k+1}^{*} = P_S(R_{k+1})$;\\
+ $I_{mod_{k+1}} = H_{k+1}^{*} - R_{k+1}$;\\
+ $H_{k+1} = P_U(H_{k+1}^{*})$;
+}
+$\Sigma_{t+1}=H_{k+1}$\\
+\Return{$\Sigma_{t+1}$}
+}
+\end{algorithm}
+
+\input{algo-analysis}
